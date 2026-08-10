@@ -1,0 +1,101 @@
+<!-- home-2: Full-screen image/video overlay | Centered text | Dark overlay -->
+<!-- NICHE: Restaurant, Hotel, Luxury, Events | STYLE: Cinematic, immersive -->
+<section id="home" class="ts-home2" data-block="home-2" aria-label="Hero">
+  <div class="ts-home2__media">
+    <img src="[hero_image_url]" alt="[hero_image_alt]" class="ts-home2__bg-img"
+      data-editable="hero_image_url" data-editable-type="image" data-editable-label="Hero Background Image"
+      loading="eager" />
+    <div class="ts-home2__overlay"></div>
+  </div>
+  <div class="ts-home2__content">
+    <p class="ts-home2__eyebrow" data-editable="hero_badge">[hero_badge]</p>
+    <h1 class="ts-home2__title" data-editable="hero_title">[hero_title]</h1>
+    <p class="ts-home2__subtitle" data-editable="hero_subtitle">[hero_subtitle]</p>
+    <a href="#contact" class="ts-btn ts-btn--accent ts-btn--lg" data-editable="hero_cta_primary">[hero_cta_primary]</a>
+  </div>
+  <div class="ts-home2__bottom">
+    <div class="ts-home2__info">
+      <div class="ts-home2__info-item">
+        <span class="ts-home2__info-label" data-editable="info_label_1">[info_label_1]</span>
+        <span class="ts-home2__info-value" data-editable="info_value_1">[info_value_1]</span>
+      </div>
+      <div class="ts-home2__info-div"></div>
+      <div class="ts-home2__info-item">
+        <span class="ts-home2__info-label" data-editable="info_label_2">[info_label_2]</span>
+        <span class="ts-home2__info-value" data-editable="info_value_2">[info_value_2]</span>
+      </div>
+      <div class="ts-home2__info-div"></div>
+      <div class="ts-home2__info-item">
+        <span class="ts-home2__info-label" data-editable="info_label_3">[info_label_3]</span>
+        <span class="ts-home2__info-value" data-editable="info_value_3">[info_value_3]</span>
+      </div>
+    </div>
+    <a href="#about" class="ts-home2__scroll-arrow" aria-label="Scroll down">↓</a>
+  </div>
+</section>
+
+<style>
+.ts-home2 {
+  position: relative; height: 100vh; min-height: 600px;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; overflow: hidden; text-align: center;
+}
+.ts-home2__media { position: absolute; inset: 0; z-index: 0; }
+.ts-home2__bg-img { width: 100%; height: 100%; object-fit: cover; }
+.ts-home2__overlay {
+  position: absolute; inset: 0;
+  background: var(--color-overlay);
+}
+.ts-home2__content {
+  position: relative; z-index: 1;
+  max-width: var(--container-narrow); padding: 0 var(--spacing-6);
+}
+.ts-home2__eyebrow {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); color: var(--color-accent);
+  letter-spacing: var(--letter-spacing-wider); text-transform: uppercase;
+  margin: 0 0 var(--spacing-5);
+}
+.ts-home2__title {
+  font-family: var(--font-headers); font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: var(--font-weight-black); color: var(--color-text-inverse);
+  line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-tight);
+  margin: 0 0 var(--spacing-6);
+}
+.ts-home2__subtitle {
+  font-family: var(--font-body); font-size: var(--font-size-lg);
+  color: rgba(255,255,255,0.85); line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--spacing-8);
+}
+.ts-home2__bottom {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 1;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--spacing-6) var(--spacing-10);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.25); backdrop-filter: blur(8px);
+}
+.ts-home2__info { display: flex; align-items: center; gap: var(--spacing-8); }
+.ts-home2__info-item { display: flex; flex-direction: column; gap: 2px; }
+.ts-home2__info-label {
+  font-family: var(--font-body); font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.60); letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+.ts-home2__info-value {
+  font-family: var(--font-headers); font-size: var(--font-size-base);
+  color: var(--color-text-inverse); font-weight: var(--font-weight-bold);
+}
+.ts-home2__info-div { width: 1px; height: 36px; background: rgba(255,255,255,0.25); }
+.ts-home2__scroll-arrow {
+  font-size: var(--font-size-2xl); color: rgba(255,255,255,0.70);
+  text-decoration: none; animation: ts-bounce 2s infinite;
+  transition: color var(--transition-fast);
+}
+.ts-home2__scroll-arrow:hover { color: var(--color-accent); }
+@media (max-width: 768px) {
+  .ts-home2__bottom { padding: var(--spacing-4) var(--spacing-5); }
+  .ts-home2__info { gap: var(--spacing-4); }
+  .ts-home2__info-div { display: none; }
+  .ts-home2__scroll-arrow { display: none; }
+}
+</style>

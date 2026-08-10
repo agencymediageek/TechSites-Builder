@@ -1,0 +1,30 @@
+/* TechSites Builder — Fitness / Sport / Gym niche tokens */
+:root {
+  --color-primary:       #1ED760;
+  --color-primary-dark:  #17B04E;
+  --color-primary-light: #3DE877;
+  --color-secondary:     #17B04E;
+  --color-accent:        #FF4757;
+  --color-accent-dark:   #CC3845;
+  --color-bg:            #0D0D0D;
+  --color-bg-alt:        #1A1A1A;
+  --color-surface:       #1A1A1A;
+  --color-surface-dark:  #080808;
+  --color-overlay:       rgba(13, 13, 13, 0.75);
+  --color-text:          #F5F5F5;
+  --color-text-inverse:  #0D0D0D;
+  --color-text-muted:    #888888;
+  --color-border:        #2A2A2A;
+  --font-headers:        'Barlow Condensed', 'Oswald', Arial, sans-serif;
+  --font-body:           'Barlow', 'Roboto Condensed', Arial, sans-serif;
+  --font-weight-bold:    800;
+  --radius-global:       4px;
+  --radius-card:         4px;
+  --radius-btn:          4px;
+  --radius-input:        4px;
+  --shadow-md:           0 4px 20px rgba(30, 215, 96, 0.20);
+  --shadow-lg:           0 8px 40px rgba(30, 215, 96, 0.28);
+  --gradient-hero:       linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #0D2A1A 100%);
+  --gradient-cta:        linear-gradient(90deg, #1ED760, #17B04E);
+  --spacing-section:     80px;
+}

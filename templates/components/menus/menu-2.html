@@ -1,0 +1,112 @@
+<!-- menu-2: Sticky dark with blur backdrop | Mobile: Hamburger overlay | Logo + CTA -->
+<!-- NICHE: Tech, Fitness, Professional | STYLE: Dark, premium, backdrop-blur -->
+<nav class="ts-nav2" id="main-nav" data-block="menu-2" role="navigation" aria-label="Main navigation">
+  <div class="ts-nav2__container">
+    <a href="/" class="ts-nav2__logo" aria-label="[business_name]">
+      <img src="[logo_url]" alt="[business_name]" class="ts-nav2__logo-img" data-editable="logo_url" data-editable-type="image" width="130" height="36" />
+      <span class="ts-nav2__logo-text" data-editable="business_name">[business_name]</span>
+    </a>
+    <ul class="ts-nav2__links" role="list">
+      <li><a href="#home" class="ts-nav2__link" data-editable="nav_link_1">[nav_link_1]</a></li>
+      <li><a href="#about" class="ts-nav2__link" data-editable="nav_link_2">[nav_link_2]</a></li>
+      <li><a href="#services" class="ts-nav2__link" data-editable="nav_link_3">[nav_link_3]</a></li>
+      <li><a href="#contact" class="ts-nav2__link" data-editable="nav_link_4">[nav_link_4]</a></li>
+    </ul>
+    <a href="#contact" class="ts-btn ts-btn--accent ts-nav2__cta" data-editable="nav_cta">[nav_cta]</a>
+    <button class="ts-nav2__burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="ts-nav2__overlay" id="nav2-overlay">
+    <ul class="ts-nav2__overlay-links" role="list">
+      <li><a href="#home">[nav_link_1]</a></li>
+      <li><a href="#about">[nav_link_2]</a></li>
+      <li><a href="#services">[nav_link_3]</a></li>
+      <li><a href="#contact">[nav_link_4]</a></li>
+      <li><a href="#contact" class="ts-btn ts-btn--accent">[nav_cta]</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+.ts-nav2 {
+  position: sticky; top: 0; z-index: var(--z-sticky);
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 var(--spacing-6);
+}
+.ts-nav2__container {
+  max-width: var(--container-max); margin: 0 auto;
+  display: flex; align-items: center; gap: var(--spacing-6); height: 68px;
+}
+.ts-nav2__logo { display: flex; align-items: center; gap: var(--spacing-3); text-decoration: none; flex-shrink: 0; }
+.ts-nav2__logo-img { height: 32px; width: auto; object-fit: contain; }
+.ts-nav2__logo-text {
+  font-family: var(--font-headers); font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold); color: var(--color-text-inverse);
+}
+.ts-nav2__links {
+  display: flex; gap: var(--spacing-6); list-style: none;
+  margin: 0 0 0 auto; padding: 0;
+}
+.ts-nav2__link {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  color: rgba(255,255,255,0.80); text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+.ts-nav2__link:hover { color: var(--color-accent); }
+.ts-nav2__cta { margin-left: var(--spacing-4); font-size: var(--font-size-sm); }
+.ts-nav2__burger {
+  display: none; background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; padding: var(--spacing-2); margin-left: auto;
+}
+.ts-nav2__burger span {
+  display: block; width: 22px; height: 2px;
+  background: white; border-radius: 2px;
+  transition: transform 0.3s, opacity 0.2s;
+}
+.ts-nav2__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.ts-nav2__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.ts-nav2__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.ts-nav2__overlay {
+  display: none; position: fixed; inset: 68px 0 0;
+  background: rgba(5, 5, 15, 0.98); backdrop-filter: blur(20px);
+  align-items: center; justify-content: center; z-index: var(--z-overlay);
+}
+.ts-nav2__overlay.open { display: flex; }
+.ts-nav2__overlay-links {
+  list-style: none; padding: 0; margin: 0; text-align: center;
+  display: flex; flex-direction: column; gap: var(--spacing-6);
+}
+.ts-nav2__overlay-links a {
+  font-family: var(--font-headers); font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold); color: white; text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.ts-nav2__overlay-links a:hover { color: var(--color-accent); }
+@media (max-width: 768px) {
+  .ts-nav2__links, .ts-nav2__cta { display: none; }
+  .ts-nav2__burger { display: flex; }
+}
+</style>
+
+<script>
+(function() {
+  const burger = document.querySelector('.ts-nav2__burger');
+  const overlay = document.getElementById('nav2-overlay');
+  burger.addEventListener('click', function() {
+    const open = overlay.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      overlay.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>

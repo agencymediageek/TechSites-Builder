@@ -1,0 +1,42 @@
+<!-- contact-1: Full-width CTA banner + simple centered form | Urgent conversion -->
+<section id="contact" class="ts-contact1" data-block="contact-1" aria-label="Get Started">
+  <div class="ts-contact1__bg"></div>
+  <div class="ts-contact1__container">
+    <span class="ts-contact1__badge" data-editable="contact_badge">[contact_badge]</span>
+    <h2 class="ts-contact1__title" data-editable="contact_title">[contact_title]</h2>
+    <p class="ts-contact1__subtitle" data-editable="contact_subtitle">[contact_subtitle]</p>
+    <form class="ts-contact1__form" onsubmit="return false;">
+      <div class="ts-contact1__form-row">
+        <input type="text" class="ts-contact1__input" placeholder="[placeholder_name]" aria-label="Name" required />
+        <input type="email" class="ts-contact1__input" placeholder="[placeholder_email]" aria-label="Email" required />
+        <input type="tel" class="ts-contact1__input" placeholder="[placeholder_phone]" aria-label="Phone" />
+        <button type="submit" class="ts-btn ts-btn--accent ts-btn--lg" data-editable="contact_cta">[contact_cta]</button>
+      </div>
+      <p class="ts-contact1__guarantee" data-editable="contact_guarantee">🔒 [contact_guarantee]</p>
+    </form>
+    <div class="ts-contact1__trust">
+      <div class="ts-contact1__trust-item"><span>⭐⭐⭐⭐⭐</span><span data-editable="trust_1">[trust_1]</span></div>
+      <div class="ts-contact1__trust-div"></div>
+      <div class="ts-contact1__trust-item"><span>✓</span><span data-editable="trust_2">[trust_2]</span></div>
+      <div class="ts-contact1__trust-div"></div>
+      <div class="ts-contact1__trust-item"><span>🏆</span><span data-editable="trust_3">[trust_3]</span></div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-contact1 { position: relative; padding: var(--spacing-section) var(--spacing-6); text-align: center; overflow: hidden; }
+.ts-contact1__bg { position: absolute; inset: 0; background: var(--gradient-hero); z-index: 0; }
+.ts-contact1__container { position: relative; z-index: 1; max-width: var(--container-narrow); margin: 0 auto; }
+.ts-contact1__badge { display: inline-block; background: rgba(255,255,255,0.2); color: var(--color-text-inverse); border: 1px solid rgba(255,255,255,0.35); border-radius: var(--radius-pill); padding: var(--spacing-1) var(--spacing-4); font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); letter-spacing: var(--letter-spacing-wide); margin-bottom: var(--spacing-6); }
+.ts-contact1__title { font-family: var(--font-headers); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: var(--font-weight-black); color: var(--color-text-inverse); line-height: var(--line-height-tight); margin: 0 0 var(--spacing-5); }
+.ts-contact1__subtitle { font-family: var(--font-body); font-size: var(--font-size-lg); color: rgba(255,255,255,0.85); line-height: var(--line-height-relaxed); margin: 0 0 var(--spacing-10); }
+.ts-contact1__form-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: var(--spacing-3); margin-bottom: var(--spacing-5); }
+.ts-contact1__input { padding: var(--spacing-4) var(--spacing-5); border: 2px solid rgba(255,255,255,0.30); border-radius: var(--radius-btn); background: rgba(255,255,255,0.15); color: var(--color-text-inverse); font-family: var(--font-body); font-size: var(--font-size-base); backdrop-filter: blur(8px); outline: none; }
+.ts-contact1__input::placeholder { color: rgba(255,255,255,0.60); }
+.ts-contact1__input:focus { border-color: rgba(255,255,255,0.80); background: rgba(255,255,255,0.25); }
+.ts-contact1__guarantee { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.80); margin: 0 0 var(--spacing-10); }
+.ts-contact1__trust { display: flex; align-items: center; justify-content: center; gap: var(--spacing-6); flex-wrap: wrap; }
+.ts-contact1__trust-item { display: flex; align-items: center; gap: var(--spacing-2); font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.85); font-weight: var(--font-weight-medium); }
+.ts-contact1__trust-div { width: 1px; height: 20px; background: rgba(255,255,255,0.30); }
+@media (max-width: 768px) { .ts-contact1__form-row { grid-template-columns: 1fr; } }
+</style>

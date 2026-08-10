@@ -1,0 +1,30 @@
+/* TechSites Builder — Beauty / Fashion / Luxury / Premium niche tokens */
+:root {
+  --color-primary:       #1A1A1A;
+  --color-primary-dark:  #0A0A0A;
+  --color-primary-light: #2D2D2D;
+  --color-secondary:     #2D2D2D;
+  --color-accent:        #D4AF37;
+  --color-accent-dark:   #B8962E;
+  --color-bg:            #FAF9F7;
+  --color-bg-alt:        #F5F3F0;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #1A1A1A;
+  --color-overlay:       rgba(0, 0, 0, 0.60);
+  --color-text:          #1A1A1A;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #6B6B6B;
+  --color-border:        #E8E8E8;
+  --font-headers:        'Cormorant Garamond', 'Didot', 'Georgia', serif;
+  --font-body:           'Raleway', 'Montserrat', Arial, sans-serif;
+  --font-weight-bold:    600;
+  --radius-global:       2px;
+  --radius-card:         0px;
+  --radius-btn:          2px;
+  --radius-input:        2px;
+  --shadow-md:           0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg:           0 4px 24px rgba(0, 0, 0, 0.12);
+  --gradient-hero:       linear-gradient(180deg, #1A1A1A 0%, #2D2D2D 100%);
+  --gradient-cta:        linear-gradient(90deg, #D4AF37, #F0C040);
+  --spacing-section:     120px;
+}

@@ -1,0 +1,57 @@
+<!-- about-3: Mission/Vision/Values 3 cards | Corporate B2B -->
+<section id="about" class="ts-about3" data-block="about-3" aria-label="About">
+  <div class="ts-about3__container">
+    <div class="ts-about3__header">
+      <span class="ts-section-label" data-editable="about_label">[about_label]</span>
+      <h2 class="ts-section-title" data-editable="about_title">[about_title]</h2>
+      <p class="ts-about3__intro" data-editable="about_intro">[about_intro]</p>
+    </div>
+    <div class="ts-about3__cards">
+      <div class="ts-about3__card">
+        <div class="ts-about3__icon" data-editable="mvv_1_icon">[mvv_1_icon]</div>
+        <h3 class="ts-about3__card-title" data-editable="mvv_1_title">[mvv_1_title]</h3>
+        <p class="ts-about3__card-text" data-editable="mvv_1_text">[mvv_1_text]</p>
+      </div>
+      <div class="ts-about3__card ts-about3__card--featured">
+        <div class="ts-about3__icon" data-editable="mvv_2_icon">[mvv_2_icon]</div>
+        <h3 class="ts-about3__card-title" data-editable="mvv_2_title">[mvv_2_title]</h3>
+        <p class="ts-about3__card-text" data-editable="mvv_2_text">[mvv_2_text]</p>
+      </div>
+      <div class="ts-about3__card">
+        <div class="ts-about3__icon" data-editable="mvv_3_icon">[mvv_3_icon]</div>
+        <h3 class="ts-about3__card-title" data-editable="mvv_3_title">[mvv_3_title]</h3>
+        <p class="ts-about3__card-text" data-editable="mvv_3_text">[mvv_3_text]</p>
+      </div>
+    </div>
+    <div class="ts-about3__values">
+      <h3 class="ts-about3__values-title" data-editable="values_title">[values_title]</h3>
+      <div class="ts-about3__values-grid">
+        <div class="ts-about3__value" data-editable="value_1">[value_1]</div>
+        <div class="ts-about3__value" data-editable="value_2">[value_2]</div>
+        <div class="ts-about3__value" data-editable="value_3">[value_3]</div>
+        <div class="ts-about3__value" data-editable="value_4">[value_4]</div>
+        <div class="ts-about3__value" data-editable="value_5">[value_5]</div>
+        <div class="ts-about3__value" data-editable="value_6">[value_6]</div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-about3 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-about3__container { max-width: var(--container-max); margin: 0 auto; }
+.ts-about3__header { text-align: center; max-width: var(--container-narrow); margin: 0 auto var(--spacing-12); }
+.ts-about3__intro { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
+.ts-about3__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-6); margin-bottom: var(--spacing-16); }
+.ts-about3__card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--spacing-8); transition: all var(--transition-normal); }
+.ts-about3__card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.ts-about3__card--featured { background: var(--gradient-hero); border-color: transparent; }
+.ts-about3__card--featured .ts-about3__card-title, .ts-about3__card--featured .ts-about3__card-text { color: var(--color-text-inverse); }
+.ts-about3__icon { font-size: 2.5rem; margin-bottom: var(--spacing-5); display: block; }
+.ts-about3__card-title { font-family: var(--font-headers); font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-4); }
+.ts-about3__card-text { font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text-muted); line-height: var(--line-height-relaxed); margin: 0; }
+.ts-about3__values { text-align: center; padding-top: var(--spacing-12); border-top: 1px solid var(--color-border); }
+.ts-about3__values-title { font-family: var(--font-headers); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-8); }
+.ts-about3__values-grid { display: flex; flex-wrap: wrap; gap: var(--spacing-3); justify-content: center; }
+.ts-about3__value { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-pill); padding: var(--spacing-2) var(--spacing-5); font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--color-text); }
+@media (max-width: 768px) { .ts-about3__cards { grid-template-columns: 1fr; } }
+</style>

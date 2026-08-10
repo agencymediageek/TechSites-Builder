@@ -1,0 +1,60 @@
+<!-- footer-1: Minimal centered | Newsletter + social | Lifestyle, Blog -->
+<footer id="footer" class="ts-footer1" data-block="footer-1" aria-label="Footer">
+  <div class="ts-footer1__newsletter">
+    <div class="ts-footer1__nl-container">
+      <h3 class="ts-footer1__nl-title" data-editable="newsletter_title">[newsletter_title]</h3>
+      <p class="ts-footer1__nl-text" data-editable="newsletter_text">[newsletter_text]</p>
+      <form class="ts-footer1__nl-form" onsubmit="return false;">
+        <input type="email" class="ts-footer1__nl-input" placeholder="[newsletter_placeholder]" aria-label="Email address" required />
+        <button type="submit" class="ts-btn ts-btn--accent" data-editable="newsletter_cta">[newsletter_cta]</button>
+      </form>
+    </div>
+  </div>
+  <div class="ts-footer1__main">
+    <div class="ts-footer1__container">
+      <a href="#home" class="ts-footer1__logo-link">
+        <img src="[logo_url]" alt="[site_name]" class="ts-footer1__logo" data-editable="logo_url" data-editable-type="image" />
+      </a>
+      <p class="ts-footer1__tagline" data-editable="footer_tagline">[footer_tagline]</p>
+      <nav class="ts-footer1__nav" aria-label="Footer navigation">
+        <a href="#home" data-editable="footer_link_1">[footer_link_1]</a>
+        <a href="#about" data-editable="footer_link_2">[footer_link_2]</a>
+        <a href="#services" data-editable="footer_link_3">[footer_link_3]</a>
+        <a href="#contact" data-editable="footer_link_4">[footer_link_4]</a>
+        <a href="[privacy_url]" data-editable="footer_link_5">[footer_link_5]</a>
+      </nav>
+      <div class="ts-footer1__social">
+        <a href="[social_instagram]" aria-label="Instagram" class="ts-footer1__social-link" data-editable="social_instagram" data-editable-type="link">📷</a>
+        <a href="[social_facebook]" aria-label="Facebook" class="ts-footer1__social-link" data-editable="social_facebook" data-editable-type="link">📘</a>
+        <a href="[social_tiktok]" aria-label="TikTok" class="ts-footer1__social-link" data-editable="social_tiktok" data-editable-type="link">🎵</a>
+        <a href="[social_youtube]" aria-label="YouTube" class="ts-footer1__social-link" data-editable="social_youtube" data-editable-type="link">📺</a>
+        <a href="[social_whatsapp]" aria-label="WhatsApp" class="ts-footer1__social-link" data-editable="social_whatsapp" data-editable-type="link">💬</a>
+      </div>
+      <p class="ts-footer1__copy" data-editable="footer_copy">© <span class="ts-year"></span> [site_name]. [footer_copy]</p>
+    </div>
+  </div>
+</footer>
+<style>
+.ts-footer1 { background: var(--color-surface-dark, #0f172a); }
+.ts-footer1__newsletter { padding: var(--spacing-12) var(--spacing-6); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.ts-footer1__nl-container { max-width: 560px; margin: 0 auto; text-align: center; }
+.ts-footer1__nl-title { font-family: var(--font-headers); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-text-inverse); margin: 0 0 var(--spacing-3); }
+.ts-footer1__nl-text { font-family: var(--font-body); font-size: var(--font-size-base); color: rgba(255,255,255,0.60); margin: 0 0 var(--spacing-6); }
+.ts-footer1__nl-form { display: flex; gap: var(--spacing-3); }
+.ts-footer1__nl-input { flex: 1; padding: var(--spacing-3) var(--spacing-5); border: 1.5px solid rgba(255,255,255,0.20); border-radius: var(--radius-btn); background: rgba(255,255,255,0.08); color: white; font-family: var(--font-body); font-size: var(--font-size-base); outline: none; }
+.ts-footer1__nl-input::placeholder { color: rgba(255,255,255,0.40); }
+.ts-footer1__nl-input:focus { border-color: var(--color-primary); }
+.ts-footer1__main { padding: var(--spacing-12) var(--spacing-6); }
+.ts-footer1__container { max-width: var(--container-narrow); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: var(--spacing-6); text-align: center; }
+.ts-footer1__logo { height: 40px; width: auto; filter: brightness(0) invert(1); display: block; }
+.ts-footer1__tagline { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.50); max-width: 400px; margin: 0; line-height: var(--line-height-relaxed); }
+.ts-footer1__nav { display: flex; gap: var(--spacing-6); flex-wrap: wrap; justify-content: center; }
+.ts-footer1__nav a { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.55); text-decoration: none; transition: color var(--transition-fast); }
+.ts-footer1__nav a:hover { color: var(--color-accent); }
+.ts-footer1__social { display: flex; gap: var(--spacing-3); }
+.ts-footer1__social-link { width: 40px; height: 40px; border-radius: var(--radius-circle); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; text-decoration: none; transition: all var(--transition-fast); }
+.ts-footer1__social-link:hover { background: var(--color-primary); border-color: var(--color-primary); transform: translateY(-2px); }
+.ts-footer1__copy { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.35); margin: 0; }
+@media (max-width: 640px) { .ts-footer1__nl-form { flex-direction: column; } .ts-footer1__nav { gap: var(--spacing-3); } }
+</style>
+<script>document.querySelectorAll('.ts-year').forEach(el => { el.textContent = new Date().getFullYear(); });</script>

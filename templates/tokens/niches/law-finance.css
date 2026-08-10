@@ -1,0 +1,30 @@
+/* TechSites Builder — Law / Finance / Accounting niche tokens */
+:root {
+  --color-primary:       #1B3A5C;
+  --color-primary-dark:  #132B44;
+  --color-primary-light: #2E5077;
+  --color-secondary:     #2E5077;
+  --color-accent:        #C9A84C;
+  --color-accent-dark:   #A8883C;
+  --color-bg:            #F8F9FA;
+  --color-bg-alt:        #F1F3F5;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #1B3A5C;
+  --color-overlay:       rgba(27, 58, 92, 0.75);
+  --color-text:          #1A1A2E;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #4B5563;
+  --color-border:        #E5E7EB;
+  --font-headers:        'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-body:           'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       4px;
+  --radius-card:         4px;
+  --radius-btn:          4px;
+  --radius-input:        4px;
+  --shadow-md:           0 4px 16px rgba(27, 58, 92, 0.10);
+  --shadow-lg:           0 8px 32px rgba(27, 58, 92, 0.14);
+  --gradient-hero:       linear-gradient(135deg, #1B3A5C 0%, #2E5077 100%);
+  --gradient-cta:        linear-gradient(90deg, #C9A84C, #E8C76B);
+  --spacing-section:     96px;
+}

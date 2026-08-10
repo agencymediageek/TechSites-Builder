@@ -1,0 +1,101 @@
+<!-- home-0: Centered hero | Gradient bg | Two CTA buttons + trust badges -->
+<!-- NICHE: All-purpose | STYLE: Clean, conversion-focused -->
+<section id="home" class="ts-home0" data-block="home-0" aria-label="Hero">
+  <div class="ts-home0__bg"></div>
+  <div class="ts-home0__container">
+    <div class="ts-home0__badge" data-editable="hero_badge" data-editable-label="Badge Text">[hero_badge]</div>
+    <h1 class="ts-home0__title" data-editable="hero_title" data-editable-label="Hero Title">[hero_title]</h1>
+    <p class="ts-home0__subtitle" data-editable="hero_subtitle" data-editable-label="Hero Subtitle">[hero_subtitle]</p>
+    <div class="ts-home0__ctas">
+      <a href="#contact" class="ts-btn ts-btn--primary ts-btn--lg" data-editable="hero_cta_primary">[hero_cta_primary]</a>
+      <a href="#about" class="ts-btn ts-btn--ghost ts-btn--lg" data-editable="hero_cta_secondary">[hero_cta_secondary]</a>
+    </div>
+    <div class="ts-home0__trust">
+      <div class="ts-home0__trust-item">
+        <span class="ts-home0__trust-icon">✓</span>
+        <span data-editable="trust_1">[trust_1]</span>
+      </div>
+      <div class="ts-home0__trust-item">
+        <span class="ts-home0__trust-icon">✓</span>
+        <span data-editable="trust_2">[trust_2]</span>
+      </div>
+      <div class="ts-home0__trust-item">
+        <span class="ts-home0__trust-icon">✓</span>
+        <span data-editable="trust_3">[trust_3]</span>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="ts-home0__scroll" aria-label="Scroll down">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+<style>
+.ts-home0 {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; text-align: center;
+}
+.ts-home0__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: var(--gradient-hero);
+}
+.ts-home0__container {
+  position: relative; z-index: 1;
+  max-width: var(--container-narrow); margin: 0 auto;
+  padding: calc(var(--spacing-section) + 80px) var(--spacing-6) var(--spacing-section);
+}
+.ts-home0__badge {
+  display: inline-block; margin-bottom: var(--spacing-6);
+  padding: var(--spacing-2) var(--spacing-5);
+  background: rgba(255,255,255,0.15); color: var(--color-text-inverse);
+  border: 1px solid rgba(255,255,255,0.30); border-radius: var(--radius-pill);
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-wide);
+  backdrop-filter: blur(8px);
+}
+.ts-home0__title {
+  font-family: var(--font-headers); font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: var(--font-weight-black); color: var(--color-text-inverse);
+  line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-tight);
+  margin: 0 0 var(--spacing-6);
+}
+.ts-home0__subtitle {
+  font-family: var(--font-body); font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: rgba(255,255,255,0.85); line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--spacing-10); max-width: 560px; margin-left: auto; margin-right: auto;
+}
+.ts-home0__ctas { display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap; margin-bottom: var(--spacing-10); }
+.ts-home0__trust {
+  display: flex; gap: var(--spacing-6); justify-content: center; flex-wrap: wrap;
+}
+.ts-home0__trust-item {
+  display: flex; align-items: center; gap: var(--spacing-2);
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  color: rgba(255,255,255,0.80); font-weight: var(--font-weight-medium);
+}
+.ts-home0__trust-icon { color: var(--color-accent); font-weight: var(--font-weight-bold); }
+.ts-home0__scroll {
+  position: absolute; bottom: var(--spacing-8); left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.60); text-decoration: none;
+  animation: ts-bounce 2s infinite;
+  transition: color var(--transition-fast);
+}
+.ts-home0__scroll:hover { color: rgba(255,255,255,1); }
+@keyframes ts-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+/* Shared button styles */
+.ts-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-2); padding: var(--spacing-3) var(--spacing-6); border-radius: var(--radius-btn); font-family: var(--font-body); font-size: var(--font-size-base); font-weight: var(--font-weight-bold); text-decoration: none; cursor: pointer; border: 2px solid transparent; transition: all var(--transition-normal) var(--transition-ease); white-space: nowrap; }
+.ts-btn--primary { background: var(--color-primary); color: var(--color-text-inverse); border-color: var(--color-primary); }
+.ts-btn--primary:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.ts-btn--accent { background: var(--color-accent); color: var(--color-text); border-color: var(--color-accent); }
+.ts-btn--accent:hover { background: var(--color-accent-dark); border-color: var(--color-accent-dark); }
+.ts-btn--ghost { background: transparent; color: var(--color-text-inverse); border-color: rgba(255,255,255,0.50); }
+.ts-btn--ghost:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.80); }
+.ts-btn--outline { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+.ts-btn--outline:hover { background: var(--color-primary); color: var(--color-text-inverse); }
+.ts-btn--lg { padding: var(--spacing-4) var(--spacing-8); font-size: var(--font-size-lg); }
+.ts-btn--sm { padding: var(--spacing-2) var(--spacing-4); font-size: var(--font-size-sm); }
+</style>

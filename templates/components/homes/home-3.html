@@ -1,0 +1,110 @@
+<!-- home-3: Split screen 50/50 contrasting halves | Inline CTA + scroll arrow -->
+<!-- NICHE: Real Estate, Fitness, Law | STYLE: Bold, dramatic split -->
+<section id="home" class="ts-home3" data-block="home-3" aria-label="Hero">
+  <div class="ts-home3__left">
+    <div class="ts-home3__left-content">
+      <span class="ts-home3__tag" data-editable="hero_badge">[hero_badge]</span>
+      <h1 class="ts-home3__title" data-editable="hero_title">[hero_title]</h1>
+      <p class="ts-home3__subtitle" data-editable="hero_subtitle">[hero_subtitle]</p>
+      <div class="ts-home3__inline-cta">
+        <input type="email" placeholder="[cta_placeholder]" class="ts-home3__input" aria-label="Email" />
+        <button class="ts-btn ts-btn--primary" type="submit" data-editable="hero_cta_primary">[hero_cta_primary]</button>
+      </div>
+      <p class="ts-home3__disclaimer" data-editable="hero_disclaimer">[hero_disclaimer]</p>
+    </div>
+  </div>
+  <div class="ts-home3__right">
+    <img src="[hero_image_url]" alt="[hero_image_alt]" class="ts-home3__img"
+      data-editable="hero_image_url" data-editable-type="image" data-editable-label="Hero Right Image" />
+    <div class="ts-home3__right-overlay"></div>
+    <div class="ts-home3__float-card">
+      <div class="ts-home3__float-num" data-editable="hero_float_num">[hero_float_num]</div>
+      <div class="ts-home3__float-label" data-editable="hero_float_label">[hero_float_label]</div>
+    </div>
+  </div>
+  <a href="#about" class="ts-home3__scroll" aria-label="Scroll down">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <span data-editable="scroll_label">[scroll_label]</span>
+  </a>
+</section>
+
+<style>
+.ts-home3 {
+  position: relative; min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.ts-home3__left {
+  background: var(--color-bg); display: flex; align-items: center;
+  padding: calc(var(--spacing-section) + 80px) var(--spacing-12) var(--spacing-20);
+}
+.ts-home3__left-content { max-width: 500px; }
+.ts-home3__tag {
+  display: inline-block; margin-bottom: var(--spacing-5);
+  padding: var(--spacing-1) var(--spacing-4);
+  background: var(--color-primary); color: var(--color-text-inverse);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body); font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold); letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+.ts-home3__title {
+  font-family: var(--font-headers); font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: var(--font-weight-black); color: var(--color-text);
+  line-height: var(--line-height-tight); margin: 0 0 var(--spacing-6);
+}
+.ts-home3__subtitle {
+  font-family: var(--font-body); font-size: var(--font-size-lg);
+  color: var(--color-text-muted); line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--spacing-8);
+}
+.ts-home3__inline-cta {
+  display: flex; border-radius: var(--radius-btn); overflow: hidden;
+  box-shadow: var(--shadow-md); margin-bottom: var(--spacing-4);
+}
+.ts-home3__input {
+  flex: 1; padding: var(--spacing-4) var(--spacing-5);
+  border: 1px solid var(--color-border); border-right: none;
+  border-radius: var(--radius-btn) 0 0 var(--radius-btn);
+  font-family: var(--font-body); font-size: var(--font-size-base);
+  color: var(--color-text); background: var(--color-surface);
+  outline: none;
+}
+.ts-home3__inline-cta .ts-btn { border-radius: 0 var(--radius-btn) var(--radius-btn) 0; }
+.ts-home3__disclaimer {
+  font-family: var(--font-body); font-size: var(--font-size-xs);
+  color: var(--color-text-muted); margin: 0;
+}
+.ts-home3__right { position: relative; overflow: hidden; }
+.ts-home3__img { width: 100%; height: 100%; object-fit: cover; }
+.ts-home3__right-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.40) 100%);
+}
+.ts-home3__float-card {
+  position: absolute; bottom: var(--spacing-8); left: var(--spacing-8);
+  background: var(--color-surface); border-radius: var(--radius-card);
+  padding: var(--spacing-5) var(--spacing-6); box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+.ts-home3__float-num {
+  font-family: var(--font-headers); font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black); color: var(--color-primary); line-height: 1;
+}
+.ts-home3__float-label {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  color: var(--color-text-muted); margin-top: var(--spacing-1);
+}
+.ts-home3__scroll {
+  position: absolute; bottom: var(--spacing-6); left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-2);
+  color: var(--color-text-muted); text-decoration: none; font-size: var(--font-size-xs);
+  font-family: var(--font-body); letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase; z-index: 10;
+  animation: ts-bounce 2s infinite;
+}
+@media (max-width: 768px) {
+  .ts-home3 { grid-template-columns: 1fr; }
+  .ts-home3__right { height: 300px; }
+  .ts-home3__left { padding: calc(var(--spacing-section) + 60px) var(--spacing-6) var(--spacing-10); }
+}
+</style>

@@ -1,0 +1,54 @@
+<!-- howto-2: Alternating icon+text rows | Services listing -->
+<section id="services" class="ts-howto2" data-block="howto-2" aria-label="Our Services">
+  <div class="ts-howto2__container">
+    <div class="ts-howto2__header">
+      <span class="ts-section-label" data-editable="howto_label">[howto_label]</span>
+      <h2 class="ts-section-title" data-editable="howto_title">[howto_title]</h2>
+    </div>
+    <div class="ts-howto2__items">
+      <div class="ts-howto2__item">
+        <div class="ts-howto2__icon-col"><div class="ts-howto2__icon-box" data-editable="service_1_icon">[service_1_icon]</div></div>
+        <div class="ts-howto2__text-col">
+          <h3 class="ts-howto2__item-title" data-editable="service_1_title">[service_1_title]</h3>
+          <p class="ts-howto2__item-text" data-editable="service_1_text">[service_1_text]</p>
+          <a href="#contact" class="ts-howto2__link" data-editable="service_1_cta">[service_1_cta] →</a>
+        </div>
+        <img src="[service_1_image]" alt="" class="ts-howto2__item-img" data-editable="service_1_image" data-editable-type="image" />
+      </div>
+      <div class="ts-howto2__item ts-howto2__item--reverse">
+        <div class="ts-howto2__icon-col"><div class="ts-howto2__icon-box" data-editable="service_2_icon">[service_2_icon]</div></div>
+        <div class="ts-howto2__text-col">
+          <h3 class="ts-howto2__item-title" data-editable="service_2_title">[service_2_title]</h3>
+          <p class="ts-howto2__item-text" data-editable="service_2_text">[service_2_text]</p>
+          <a href="#contact" class="ts-howto2__link" data-editable="service_2_cta">[service_2_cta] →</a>
+        </div>
+        <img src="[service_2_image]" alt="" class="ts-howto2__item-img" data-editable="service_2_image" data-editable-type="image" />
+      </div>
+      <div class="ts-howto2__item">
+        <div class="ts-howto2__icon-col"><div class="ts-howto2__icon-box" data-editable="service_3_icon">[service_3_icon]</div></div>
+        <div class="ts-howto2__text-col">
+          <h3 class="ts-howto2__item-title" data-editable="service_3_title">[service_3_title]</h3>
+          <p class="ts-howto2__item-text" data-editable="service_3_text">[service_3_text]</p>
+          <a href="#contact" class="ts-howto2__link" data-editable="service_3_cta">[service_3_cta] →</a>
+        </div>
+        <img src="[service_3_image]" alt="" class="ts-howto2__item-img" data-editable="service_3_image" data-editable-type="image" />
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-howto2 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-howto2__container { max-width: var(--container-max); margin: 0 auto; }
+.ts-howto2__header { text-align: center; max-width: var(--container-narrow); margin: 0 auto var(--spacing-16); }
+.ts-howto2__items { display: flex; flex-direction: column; gap: var(--spacing-20); }
+.ts-howto2__item { display: grid; grid-template-columns: auto 1fr 1fr; gap: var(--spacing-10); align-items: center; }
+.ts-howto2__item--reverse { direction: rtl; }
+.ts-howto2__item--reverse > * { direction: ltr; }
+.ts-howto2__icon-box { width: 64px; height: 64px; border-radius: var(--radius-card); background: var(--color-primary); color: var(--color-text-inverse); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; }
+.ts-howto2__item-title { font-family: var(--font-headers); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-4); }
+.ts-howto2__item-text { font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text-muted); line-height: var(--line-height-relaxed); margin: 0 0 var(--spacing-5); }
+.ts-howto2__link { font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: var(--color-primary); text-decoration: none; transition: color var(--transition-fast); }
+.ts-howto2__link:hover { color: var(--color-primary-dark); }
+.ts-howto2__item-img { width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius-card); box-shadow: var(--shadow-lg); }
+@media (max-width: 768px) { .ts-howto2__item { grid-template-columns: 1fr; } .ts-howto2__item--reverse { direction: ltr; } .ts-howto2__item-img { display: none; } .ts-howto2__icon-box { width: 52px; height: 52px; } }
+</style>

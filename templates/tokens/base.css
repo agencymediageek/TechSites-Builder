@@ -1,0 +1,156 @@
+/**
+ * TechSites Builder — Base Design Token Contract
+ *
+ * This file defines ALL CSS custom properties used by HTML blocks.
+ * Never use hardcoded colors, fonts, or radii in block HTML.
+ * Override these values in niche-specific token files.
+ *
+ * @version 1.0.0
+ */
+
+:root {
+  /* ── Color System ──────────────────────────────────────────── */
+  --color-primary:       #1B3A5C;   /* Main brand color */
+  --color-primary-dark:  #132B44;   /* Darker shade (hover states) */
+  --color-primary-light: #2E5077;   /* Lighter shade (backgrounds) */
+  --color-secondary:     #2E5077;   /* Secondary brand color */
+  --color-accent:        #C9A84C;   /* CTA accent, highlights */
+  --color-accent-dark:   #A8883C;   /* Hover on accent */
+
+  /* Backgrounds */
+  --color-bg:            #F8F9FA;   /* Page background */
+  --color-bg-alt:        #F1F3F5;   /* Alternate section bg */
+  --color-surface:       #FFFFFF;   /* Card / container bg */
+  --color-surface-dark:  #1A1A2E;   /* Dark surface (inverted sections) */
+  --color-overlay:       rgba(0, 0, 0, 0.55); /* Image overlays */
+
+  /* Text */
+  --color-text:          #1A1A2E;   /* Primary text */
+  --color-text-inverse:  #FFFFFF;   /* Text on dark bg */
+  --color-text-muted:    #6B7280;   /* Secondary/helper text */
+  --color-text-disabled: #9CA3AF;   /* Disabled state */
+  --color-text-accent:   var(--color-accent); /* Highlighted text */
+
+  /* Borders & Dividers */
+  --color-border:        #E5E7EB;   /* Default border */
+  --color-border-dark:   rgba(255,255,255,0.15); /* Border on dark bg */
+
+  /* Semantic */
+  --color-success:       #10B981;
+  --color-warning:       #F59E0B;
+  --color-error:         #EF4444;
+  --color-info:          #3B82F6;
+
+  /* ── Typography ────────────────────────────────────────────── */
+  --font-headers:        'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:           'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:           'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  --font-size-base:      16px;
+  --font-size-sm:        14px;
+  --font-size-xs:        12px;
+  --font-size-lg:        18px;
+  --font-size-xl:        20px;
+  --font-size-2xl:       24px;
+  --font-size-3xl:       30px;
+  --font-size-4xl:       36px;
+  --font-size-5xl:       48px;
+
+  --font-weight-normal:  400;
+  --font-weight-medium:  500;
+  --font-weight-bold:    700;
+  --font-weight-black:   900;
+
+  --line-height-tight:   1.2;
+  --line-height-normal:  1.6;
+  --line-height-relaxed: 1.8;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide:   0.05em;
+  --letter-spacing-wider:  0.1em;
+
+  /* ── Shape & Depth ─────────────────────────────────────────── */
+  --radius-none:    0;
+  --radius-sm:      4px;
+  --radius-global:  8px;     /* Default border radius */
+  --radius-card:    12px;    /* Card containers */
+  --radius-btn:     8px;     /* Buttons */
+  --radius-input:   6px;     /* Form inputs */
+  --radius-pill:    9999px;  /* Pill buttons/badges */
+  --radius-circle:  50%;     /* Avatars, icons */
+
+  /* Shadows */
+  --shadow-none:  none;
+  --shadow-sm:    0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow-md:    0 4px 16px 0 rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg:    0 8px 32px 0 rgba(0, 0, 0, 0.10), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
+  --shadow-xl:    0 20px 48px 0 rgba(0, 0, 0, 0.14);
+  --shadow-color: rgba(0, 0, 0, 0.10);
+
+  /* Glassmorphism */
+  --glass-bg:     rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-blur:   blur(16px);
+
+  /* ── Layout & Spacing ─────────────────────────────────────── */
+  --container-max:      1200px;
+  --container-narrow:   800px;
+  --container-wide:     1400px;
+
+  --spacing-1:   4px;
+  --spacing-2:   8px;
+  --spacing-3:   12px;
+  --spacing-4:   16px;
+  --spacing-5:   20px;
+  --spacing-6:   24px;
+  --spacing-8:   32px;
+  --spacing-10:  40px;
+  --spacing-12:  48px;
+  --spacing-16:  64px;
+  --spacing-20:  80px;
+  --spacing-24:  96px;
+  --spacing-32:  128px;
+
+  --spacing-inner:     var(--spacing-6);     /* Inside cards */
+  --spacing-component: var(--spacing-10);    /* Between components */
+  --spacing-section:   var(--spacing-20);    /* Between sections */
+
+  /* ── Motion ────────────────────────────────────────────────── */
+  --transition-fast:    0.10s;
+  --transition-speed:   0.20s;
+  --transition-normal:  0.25s;
+  --transition-slow:    0.40s;
+  --transition-ease:    cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-out:     cubic-bezier(0, 0, 0.2, 1);
+
+  /* ── Gradients ─────────────────────────────────────────────── */
+  --gradient-hero:  linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  --gradient-cta:   linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  --gradient-card:  linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg-alt) 100%);
+  --gradient-dark:  linear-gradient(180deg, var(--color-surface-dark) 0%, #0A0A1A 100%);
+
+  /* ── Z-Index Layers ────────────────────────────────────────── */
+  --z-below:   -1;
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-editor:   2147483646;
+}
+
+/* ── Dark Mode Support ─────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:      #0F172A;
+    --color-bg-alt:  #1E293B;
+    --color-surface: #1E293B;
+    --color-text:    #F1F5F9;
+    --color-text-muted: #94A3B8;
+    --color-border:  #334155;
+  }
+}

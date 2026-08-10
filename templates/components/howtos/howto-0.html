@@ -1,0 +1,55 @@
+<!-- howto-0: 3-step horizontal with icons | Clean, all niches -->
+<section id="services" class="ts-howto0" data-block="howto-0" aria-label="How It Works">
+  <div class="ts-howto0__container">
+    <div class="ts-howto0__header">
+      <span class="ts-section-label" data-editable="howto_label">[howto_label]</span>
+      <h2 class="ts-section-title" data-editable="howto_title">[howto_title]</h2>
+      <p class="ts-howto0__intro" data-editable="howto_intro">[howto_intro]</p>
+    </div>
+    <div class="ts-howto0__steps">
+      <div class="ts-howto0__step">
+        <div class="ts-howto0__icon-wrap"><span class="ts-howto0__icon" data-editable="step_1_icon">[step_1_icon]</span></div>
+        <div class="ts-howto0__num">01</div>
+        <h3 class="ts-howto0__step-title" data-editable="step_1_title">[step_1_title]</h3>
+        <p class="ts-howto0__step-text" data-editable="step_1_text">[step_1_text]</p>
+      </div>
+      <div class="ts-howto0__connector" aria-hidden="true">→</div>
+      <div class="ts-howto0__step">
+        <div class="ts-howto0__icon-wrap"><span class="ts-howto0__icon" data-editable="step_2_icon">[step_2_icon]</span></div>
+        <div class="ts-howto0__num">02</div>
+        <h3 class="ts-howto0__step-title" data-editable="step_2_title">[step_2_title]</h3>
+        <p class="ts-howto0__step-text" data-editable="step_2_text">[step_2_text]</p>
+      </div>
+      <div class="ts-howto0__connector" aria-hidden="true">→</div>
+      <div class="ts-howto0__step">
+        <div class="ts-howto0__icon-wrap ts-howto0__icon-wrap--accent"><span class="ts-howto0__icon" data-editable="step_3_icon">[step_3_icon]</span></div>
+        <div class="ts-howto0__num ts-howto0__num--accent">03</div>
+        <h3 class="ts-howto0__step-title" data-editable="step_3_title">[step_3_title]</h3>
+        <p class="ts-howto0__step-text" data-editable="step_3_text">[step_3_text]</p>
+      </div>
+    </div>
+    <div class="ts-howto0__cta-wrap">
+      <a href="#contact" class="ts-btn ts-btn--primary ts-btn--lg" data-editable="howto_cta">[howto_cta]</a>
+    </div>
+  </div>
+</section>
+<style>
+.ts-howto0 { background: var(--color-bg-alt); padding: var(--spacing-section) var(--spacing-6); }
+.ts-howto0__container { max-width: var(--container-max); margin: 0 auto; }
+.ts-howto0__header { text-align: center; max-width: var(--container-narrow); margin: 0 auto var(--spacing-12); }
+.ts-howto0__intro { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
+.ts-howto0__steps { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: var(--spacing-4); align-items: start; margin-bottom: var(--spacing-12); }
+.ts-howto0__step { background: var(--color-surface); border-radius: var(--radius-card); padding: var(--spacing-8); text-align: center; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: all var(--transition-normal); }
+.ts-howto0__step:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.ts-howto0__icon-wrap { width: 72px; height: 72px; border-radius: var(--radius-circle); background: var(--color-bg); border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-5); }
+.ts-howto0__icon-wrap--accent { background: var(--color-primary); border-color: var(--color-primary); }
+.ts-howto0__icon { font-size: 2rem; }
+.ts-howto0__icon-wrap--accent .ts-howto0__icon { filter: brightness(10); }
+.ts-howto0__num { font-family: var(--font-headers); font-size: var(--font-size-xs); font-weight: var(--font-weight-black); color: var(--color-primary); letter-spacing: var(--letter-spacing-wider); text-transform: uppercase; margin-bottom: var(--spacing-3); }
+.ts-howto0__num--accent { color: var(--color-accent); }
+.ts-howto0__step-title { font-family: var(--font-headers); font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-3); }
+.ts-howto0__step-text { font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text-muted); line-height: var(--line-height-relaxed); margin: 0; }
+.ts-howto0__connector { display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--color-border); padding-top: var(--spacing-10); }
+.ts-howto0__cta-wrap { text-align: center; }
+@media (max-width: 768px) { .ts-howto0__steps { grid-template-columns: 1fr; } .ts-howto0__connector { transform: rotate(90deg); padding: 0; } }
+</style>

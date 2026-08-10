@@ -1,0 +1,76 @@
+<!-- footer-2: Local business | Map + Hours + Contact | Restaurant, Clinic -->
+<footer id="footer" class="ts-footer2" data-block="footer-2" aria-label="Footer">
+  <div class="ts-footer2__main">
+    <div class="ts-footer2__container">
+      <div class="ts-footer2__brand">
+        <img src="[logo_url]" alt="[site_name]" class="ts-footer2__logo" data-editable="logo_url" data-editable-type="image" />
+        <p class="ts-footer2__about" data-editable="footer_about">[footer_about]</p>
+        <div class="ts-footer2__social">
+          <a href="[social_instagram]" aria-label="Instagram" class="ts-footer2__social-link" data-editable="social_instagram" data-editable-type="link">📷</a>
+          <a href="[social_facebook]" aria-label="Facebook" class="ts-footer2__social-link" data-editable="social_facebook" data-editable-type="link">📘</a>
+          <a href="[social_whatsapp]" aria-label="WhatsApp" class="ts-footer2__social-link" data-editable="social_whatsapp" data-editable-type="link">💬</a>
+        </div>
+      </div>
+      <div class="ts-footer2__hours">
+        <h4 class="ts-footer2__col-title" data-editable="hours_title">[hours_title]</h4>
+        <ul class="ts-footer2__hours-list">
+          <li><span data-editable="hours_mon_fri_label">[hours_mon_fri_label]</span><span data-editable="hours_mon_fri">[hours_mon_fri]</span></li>
+          <li><span data-editable="hours_saturday_label">[hours_saturday_label]</span><span data-editable="hours_saturday">[hours_saturday]</span></li>
+          <li><span data-editable="hours_sunday_label">[hours_sunday_label]</span><span data-editable="hours_sunday">[hours_sunday]</span></li>
+        </ul>
+        <a href="#contact" class="ts-btn ts-btn--accent ts-btn--sm" style="margin-top: var(--spacing-5);" data-editable="footer_book_cta">[footer_book_cta]</a>
+      </div>
+      <div class="ts-footer2__info">
+        <h4 class="ts-footer2__col-title" data-editable="footer_contact_title">[footer_contact_title]</h4>
+        <ul class="ts-footer2__info-list">
+          <li><span>📍</span><span data-editable="footer_address">[footer_address]</span></li>
+          <li><span>📞</span><a href="tel:[footer_phone]" data-editable="footer_phone">[footer_phone]</a></li>
+          <li><span>📧</span><a href="mailto:[footer_email]" data-editable="footer_email">[footer_email]</a></li>
+        </ul>
+      </div>
+      <div class="ts-footer2__map-col">
+        <h4 class="ts-footer2__col-title" data-editable="footer_map_title">[footer_map_title]</h4>
+        <div class="ts-footer2__map">
+          <iframe src="[map_embed_url]" class="ts-footer2__map-iframe" title="Location" loading="lazy" allowfullscreen data-editable="map_embed_url" data-editable-type="link"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ts-footer2__bottom">
+    <div class="ts-footer2__bottom-row">
+      <p class="ts-footer2__copy" data-editable="footer_copy">© <span class="ts-year"></span> [site_name]. [footer_copy]</p>
+      <div class="ts-footer2__legal">
+        <a href="[privacy_url]" data-editable="footer_privacy">[footer_privacy]</a>
+        <a href="[terms_url]" data-editable="footer_terms">[footer_terms]</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<style>
+.ts-footer2 { background: var(--color-surface-dark, #0f172a); }
+.ts-footer2__main { padding: var(--spacing-section) var(--spacing-6); }
+.ts-footer2__container { max-width: var(--container-max); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: var(--spacing-10); }
+.ts-footer2__logo { height: 48px; width: auto; filter: brightness(0) invert(1); display: block; margin-bottom: var(--spacing-5); }
+.ts-footer2__about { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.55); line-height: var(--line-height-relaxed); margin: 0 0 var(--spacing-6); }
+.ts-footer2__social { display: flex; gap: var(--spacing-3); }
+.ts-footer2__social-link { width: 36px; height: 36px; border-radius: var(--radius-circle); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 1rem; text-decoration: none; transition: all var(--transition-fast); }
+.ts-footer2__social-link:hover { background: var(--color-primary); border-color: var(--color-primary); }
+.ts-footer2__col-title { font-family: var(--font-headers); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: rgba(255,255,255,0.90); letter-spacing: var(--letter-spacing-wide); text-transform: uppercase; margin: 0 0 var(--spacing-5); }
+.ts-footer2__hours-list { list-style: none; padding: 0; margin: 0 0 var(--spacing-5); display: flex; flex-direction: column; gap: var(--spacing-3); }
+.ts-footer2__hours-list li { display: flex; justify-content: space-between; font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.60); gap: var(--spacing-4); }
+.ts-footer2__info-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--spacing-4); }
+.ts-footer2__info-list li { display: flex; gap: var(--spacing-3); font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.60); align-items: flex-start; }
+.ts-footer2__info-list a { color: rgba(255,255,255,0.60); text-decoration: none; transition: color var(--transition-fast); }
+.ts-footer2__info-list a:hover { color: var(--color-accent); }
+.ts-footer2__map { border-radius: var(--radius-global); overflow: hidden; }
+.ts-footer2__map-iframe { width: 100%; height: 180px; border: none; display: block; }
+.ts-footer2__bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: var(--spacing-5) var(--spacing-6); }
+.ts-footer2__bottom-row { max-width: var(--container-max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-4); }
+.ts-footer2__copy { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.35); margin: 0; }
+.ts-footer2__legal { display: flex; gap: var(--spacing-5); }
+.ts-footer2__legal a { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.35); text-decoration: none; transition: color var(--transition-fast); }
+.ts-footer2__legal a:hover { color: rgba(255,255,255,0.75); }
+@media (max-width: 1024px) { .ts-footer2__container { grid-template-columns: 1fr 1fr; gap: var(--spacing-8); } }
+@media (max-width: 640px) { .ts-footer2__container { grid-template-columns: 1fr; } }
+</style>
+<script>document.querySelectorAll('.ts-year').forEach(el => { el.textContent = new Date().getFullYear(); });</script>

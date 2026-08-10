@@ -1,0 +1,30 @@
+/* TechSites Builder — Travel / Tourism / Hotel niche tokens */
+:root {
+  --color-primary:       #0077B6;
+  --color-primary-dark:  #005C8E;
+  --color-primary-light: #0096C7;
+  --color-secondary:     #0096C7;
+  --color-accent:        #48CAE4;
+  --color-accent-dark:   #2BAFC8;
+  --color-bg:            #F0F8FF;
+  --color-bg-alt:        #E0F2FE;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #03045E;
+  --color-overlay:       rgba(3, 4, 94, 0.70);
+  --color-text:          #03045E;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #0077B6;
+  --color-border:        #BAE6FD;
+  --font-headers:        'Playfair Display', 'Lora', Georgia, serif;
+  --font-body:           'Lato', 'Open Sans', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       12px;
+  --radius-card:         16px;
+  --radius-btn:          50px;
+  --radius-input:        8px;
+  --shadow-md:           0 4px 20px rgba(0, 119, 182, 0.15);
+  --shadow-lg:           0 8px 40px rgba(0, 119, 182, 0.22);
+  --gradient-hero:       linear-gradient(135deg, #03045E 0%, #0077B6 50%, #48CAE4 100%);
+  --gradient-cta:        linear-gradient(90deg, #0077B6, #48CAE4);
+  --spacing-section:     88px;
+}

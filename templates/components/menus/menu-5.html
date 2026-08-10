@@ -1,0 +1,123 @@
+<!-- menu-5: Top announcement bar + main nav | Mobile: Collapsible | Promo/sale aware -->
+<!-- NICHE: Retail, Events, Hospitality | STYLE: Dual-bar, announcement-driven -->
+<header class="ts-nav5" data-block="menu-5">
+  <!-- Announcement Bar -->
+  <div class="ts-nav5__announce">
+    <p class="ts-nav5__announce-text" data-editable="announce_text" data-editable-label="Announcement Bar Text">[announce_text]</p>
+    <a href="[announce_url]" class="ts-nav5__announce-link" data-editable="announce_cta" data-editable-type="link">[announce_cta] →</a>
+    <button class="ts-nav5__announce-close" aria-label="Close announcement">✕</button>
+  </div>
+
+  <!-- Main Nav -->
+  <nav class="ts-nav5__main" id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="ts-nav5__container">
+      <button class="ts-nav5__burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/" class="ts-nav5__logo">
+        <img src="[logo_url]" alt="[business_name]" height="36" data-editable="logo_url" data-editable-type="image" />
+      </a>
+      <ul class="ts-nav5__links" role="list">
+        <li><a href="#home" class="ts-nav5__link" data-editable="nav_link_1">[nav_link_1]</a></li>
+        <li><a href="#services" class="ts-nav5__link" data-editable="nav_link_2">[nav_link_2]</a></li>
+        <li><a href="#about" class="ts-nav5__link" data-editable="nav_link_3">[nav_link_3]</a></li>
+        <li><a href="#contact" class="ts-nav5__link" data-editable="nav_link_4">[nav_link_4]</a></li>
+      </ul>
+      <div class="ts-nav5__actions">
+        <a href="[phone_url]" class="ts-nav5__phone" data-editable="nav_phone">[nav_phone]</a>
+        <a href="#contact" class="ts-btn ts-btn--primary" data-editable="nav_cta">[nav_cta]</a>
+      </div>
+    </div>
+
+    <!-- Collapsible Mobile Menu -->
+    <div class="ts-nav5__collapse" id="nav5-collapse">
+      <ul role="list">
+        <li><a href="#home">[nav_link_1]</a></li>
+        <li><a href="#services">[nav_link_2]</a></li>
+        <li><a href="#about">[nav_link_3]</a></li>
+        <li><a href="#contact">[nav_link_4]</a></li>
+        <li><a href="#contact" class="ts-btn ts-btn--primary">[nav_cta]</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+.ts-nav5 { position: sticky; top: 0; z-index: var(--z-sticky); }
+.ts-nav5__announce {
+  background: var(--color-primary); color: var(--color-text-inverse);
+  padding: var(--spacing-2) var(--spacing-6);
+  display: flex; align-items: center; justify-content: center; gap: var(--spacing-3);
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+}
+.ts-nav5__announce-text { margin: 0; }
+.ts-nav5__announce-link {
+  color: var(--color-accent); font-weight: var(--font-weight-bold);
+  text-decoration: none; white-space: nowrap;
+  transition: opacity var(--transition-fast);
+}
+.ts-nav5__announce-link:hover { opacity: 0.8; }
+.ts-nav5__announce-close {
+  background: none; border: none; color: inherit; cursor: pointer;
+  padding: 0; font-size: 16px; margin-left: auto; opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+.ts-nav5__announce-close:hover { opacity: 1; }
+.ts-nav5__announce.hidden { display: none; }
+.ts-nav5__main {
+  background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+}
+.ts-nav5__container {
+  max-width: var(--container-max); margin: 0 auto;
+  display: flex; align-items: center; gap: var(--spacing-6);
+  padding: 0 var(--spacing-6); height: 64px;
+}
+.ts-nav5__logo { display: block; flex-shrink: 0; margin-right: var(--spacing-8); }
+.ts-nav5__logo img { height: 34px; }
+.ts-nav5__links {
+  display: flex; gap: var(--spacing-6); list-style: none; margin: 0; padding: 0;
+}
+.ts-nav5__link {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); color: var(--color-text);
+  text-decoration: none; transition: color var(--transition-fast);
+}
+.ts-nav5__link:hover { color: var(--color-primary); }
+.ts-nav5__actions { display: flex; align-items: center; gap: var(--spacing-4); margin-left: auto; }
+.ts-nav5__phone {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  color: var(--color-text-muted); text-decoration: none;
+}
+.ts-nav5__burger {
+  display: none; background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; padding: 4px;
+}
+.ts-nav5__burger span { display: block; width: 22px; height: 2px; background: var(--color-text); border-radius: 2px; }
+.ts-nav5__collapse { display: none; border-top: 1px solid var(--color-border); }
+.ts-nav5__collapse.open { display: block; }
+.ts-nav5__collapse ul { list-style: none; margin: 0; padding: var(--spacing-4) var(--spacing-6); }
+.ts-nav5__collapse li { margin-bottom: var(--spacing-3); }
+.ts-nav5__collapse a {
+  font-family: var(--font-body); font-size: var(--font-size-base);
+  color: var(--color-text); text-decoration: none; display: block;
+  padding: var(--spacing-2) 0;
+}
+@media (max-width: 768px) {
+  .ts-nav5__links, .ts-nav5__actions { display: none; }
+  .ts-nav5__burger { display: flex; }
+}
+</style>
+
+<script>
+(function() {
+  const announce = document.querySelector('.ts-nav5__announce');
+  const closeBtn = document.querySelector('.ts-nav5__announce-close');
+  const burger = document.querySelector('.ts-nav5__burger');
+  const collapse = document.getElementById('nav5-collapse');
+  closeBtn?.addEventListener('click', () => announce.classList.add('hidden'));
+  burger?.addEventListener('click', function() {
+    const open = collapse.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+})();
+</script>

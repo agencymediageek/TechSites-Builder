@@ -1,0 +1,33 @@
+/* TechSites Builder — Technology / SaaS / Startup / Digital niche tokens */
+:root {
+  --color-primary:       #6C3FC5;
+  --color-primary-dark:  #5A2CA0;
+  --color-primary-light: #8B5CF6;
+  --color-secondary:     #5A2CA0;
+  --color-accent:        #00D2FF;
+  --color-accent-dark:   #00A8CC;
+  --color-bg:            #0A0A1A;
+  --color-bg-alt:        #13132A;
+  --color-surface:       #13132A;
+  --color-surface-dark:  #060612;
+  --color-overlay:       rgba(108, 63, 197, 0.30);
+  --color-text:          #E8E8FF;
+  --color-text-inverse:  #0A0A1A;
+  --color-text-muted:    #8888BB;
+  --color-border:        #2A2A4A;
+  --font-headers:        'Plus Jakarta Sans', 'Inter', Arial, sans-serif;
+  --font-body:           'Inter', 'DM Sans', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       8px;
+  --radius-card:         12px;
+  --radius-btn:          8px;
+  --radius-input:        8px;
+  --shadow-md:           0 4px 24px rgba(108, 63, 197, 0.25);
+  --shadow-lg:           0 8px 48px rgba(108, 63, 197, 0.35);
+  --glass-bg:            rgba(108, 63, 197, 0.10);
+  --glass-border:        rgba(108, 63, 197, 0.20);
+  --glass-blur:          blur(12px);
+  --gradient-hero:       linear-gradient(135deg, #6C3FC5 0%, #00D2FF 100%);
+  --gradient-cta:        linear-gradient(90deg, #6C3FC5, #8B5CF6);
+  --spacing-section:     96px;
+}

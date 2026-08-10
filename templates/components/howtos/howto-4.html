@@ -1,0 +1,88 @@
+<!-- howto-4: Interactive step-by-step with progress indicator | SaaS, Digital -->
+<section id="services" class="ts-howto4" data-block="howto-4" aria-label="Get Started">
+  <div class="ts-howto4__container">
+    <div class="ts-howto4__header">
+      <span class="ts-section-label" data-editable="howto_label">[howto_label]</span>
+      <h2 class="ts-section-title" data-editable="howto_title">[howto_title]</h2>
+      <p class="ts-howto4__intro" data-editable="howto_intro">[howto_intro]</p>
+    </div>
+    <div class="ts-howto4__stepper">
+      <div class="ts-howto4__progress">
+        <div class="ts-howto4__progress-bar" id="ts-progress-bar"></div>
+      </div>
+      <div class="ts-howto4__steps-nav">
+        <div class="ts-howto4__step-nav active" data-step="0"><div class="ts-howto4__step-dot">1</div><span data-editable="step_1_title">[step_1_title]</span></div>
+        <div class="ts-howto4__step-nav" data-step="1"><div class="ts-howto4__step-dot">2</div><span data-editable="step_2_title">[step_2_title]</span></div>
+        <div class="ts-howto4__step-nav" data-step="2"><div class="ts-howto4__step-dot">3</div><span data-editable="step_3_title">[step_3_title]</span></div>
+        <div class="ts-howto4__step-nav" data-step="3"><div class="ts-howto4__step-dot">4</div><span data-editable="step_4_title">[step_4_title]</span></div>
+      </div>
+      <div class="ts-howto4__panels">
+        <div class="ts-howto4__panel active" data-panel="0">
+          <div class="ts-howto4__panel-icon" data-editable="step_1_icon">[step_1_icon]</div>
+          <h3 data-editable="step_1_title_2">[step_1_title]</h3>
+          <p data-editable="step_1_text">[step_1_text]</p>
+          <button class="ts-btn ts-btn--primary ts-howto4__next">Next →</button>
+        </div>
+        <div class="ts-howto4__panel" data-panel="1">
+          <div class="ts-howto4__panel-icon" data-editable="step_2_icon">[step_2_icon]</div>
+          <h3 data-editable="step_2_title_2">[step_2_title]</h3>
+          <p data-editable="step_2_text">[step_2_text]</p>
+          <div class="ts-howto4__nav-btns"><button class="ts-btn ts-btn--outline ts-howto4__prev">← Back</button><button class="ts-btn ts-btn--primary ts-howto4__next">Next →</button></div>
+        </div>
+        <div class="ts-howto4__panel" data-panel="2">
+          <div class="ts-howto4__panel-icon" data-editable="step_3_icon">[step_3_icon]</div>
+          <h3 data-editable="step_3_title_2">[step_3_title]</h3>
+          <p data-editable="step_3_text">[step_3_text]</p>
+          <div class="ts-howto4__nav-btns"><button class="ts-btn ts-btn--outline ts-howto4__prev">← Back</button><button class="ts-btn ts-btn--primary ts-howto4__next">Next →</button></div>
+        </div>
+        <div class="ts-howto4__panel" data-panel="3">
+          <div class="ts-howto4__panel-icon" data-editable="step_4_icon">[step_4_icon]</div>
+          <h3 data-editable="step_4_title_2">[step_4_title]</h3>
+          <p data-editable="step_4_text">[step_4_text]</p>
+          <div class="ts-howto4__nav-btns"><button class="ts-btn ts-btn--outline ts-howto4__prev">← Back</button><a href="#contact" class="ts-btn ts-btn--accent" data-editable="howto_cta">[howto_cta]</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-howto4 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-howto4__container { max-width: var(--container-narrow); margin: 0 auto; }
+.ts-howto4__header { text-align: center; margin-bottom: var(--spacing-12); }
+.ts-howto4__intro { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
+.ts-howto4__stepper { background: var(--color-surface); border-radius: var(--radius-card); border: 1px solid var(--color-border); overflow: hidden; box-shadow: var(--shadow-lg); }
+.ts-howto4__progress { height: 4px; background: var(--color-border); }
+.ts-howto4__progress-bar { height: 100%; background: var(--gradient-cta); width: 25%; transition: width var(--transition-normal); }
+.ts-howto4__steps-nav { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--color-border); }
+.ts-howto4__step-nav { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-2); padding: var(--spacing-4) var(--spacing-3); cursor: pointer; font-family: var(--font-body); font-size: var(--font-size-xs); color: var(--color-text-muted); text-align: center; border-right: 1px solid var(--color-border); transition: all var(--transition-fast); }
+.ts-howto4__step-nav:last-child { border-right: none; }
+.ts-howto4__step-nav.active { color: var(--color-primary); background: var(--color-bg); }
+.ts-howto4__step-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-bold); font-size: var(--font-size-sm); }
+.ts-howto4__step-nav.active .ts-howto4__step-dot { border-color: var(--color-primary); background: var(--color-primary); color: white; }
+.ts-howto4__panel { display: none; padding: var(--spacing-10); text-align: center; }
+.ts-howto4__panel.active { display: block; }
+.ts-howto4__panel-icon { font-size: 3.5rem; margin-bottom: var(--spacing-5); display: block; }
+.ts-howto4__panel h3 { font-family: var(--font-headers); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-5); }
+.ts-howto4__panel p { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); margin: 0 0 var(--spacing-8); }
+.ts-howto4__nav-btns { display: flex; gap: var(--spacing-4); justify-content: center; }
+</style>
+<script>
+(function() {
+  let current = 0;
+  const panels = document.querySelectorAll('.ts-howto4__panel');
+  const navs = document.querySelectorAll('.ts-howto4__step-nav');
+  const bar = document.getElementById('ts-progress-bar');
+  function go(idx) {
+    idx = Math.max(0, Math.min(panels.length-1, idx));
+    panels.forEach(p => p.classList.remove('active'));
+    navs.forEach(n => n.classList.remove('active'));
+    panels[idx].classList.add('active');
+    navs[idx].classList.add('active');
+    if (bar) bar.style.width = ((idx+1)/panels.length*100) + '%';
+    current = idx;
+  }
+  document.querySelectorAll('.ts-howto4__next').forEach(b => b.addEventListener('click', () => go(current+1)));
+  document.querySelectorAll('.ts-howto4__prev').forEach(b => b.addEventListener('click', () => go(current-1)));
+  navs.forEach(n => n.addEventListener('click', function() { go(+this.dataset.step); }));
+})();
+</script>

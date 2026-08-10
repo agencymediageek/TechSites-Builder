@@ -1,0 +1,30 @@
+/* TechSites Builder — Real Estate / Property niche tokens */
+:root {
+  --color-primary:       #2C3E50;
+  --color-primary-dark:  #1E2D3D;
+  --color-primary-light: #34495E;
+  --color-secondary:     #34495E;
+  --color-accent:        #C9A84C;
+  --color-accent-dark:   #A8883C;
+  --color-bg:            #F5F5F0;
+  --color-bg-alt:        #EEEDE8;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #2C3E50;
+  --color-overlay:       rgba(44, 62, 80, 0.80);
+  --color-text:          #1A1A1A;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #6B7280;
+  --color-border:        #E8E5E0;
+  --font-headers:        'Cormorant', 'Merriweather', Georgia, serif;
+  --font-body:           'Raleway', 'Lato', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       6px;
+  --radius-card:         8px;
+  --radius-btn:          4px;
+  --radius-input:        6px;
+  --shadow-md:           0 4px 16px rgba(44, 62, 80, 0.12);
+  --shadow-lg:           0 8px 32px rgba(44, 62, 80, 0.18);
+  --gradient-hero:       linear-gradient(180deg, rgba(44,62,80,0.85) 0%, rgba(44,62,80,0.97) 100%);
+  --gradient-cta:        linear-gradient(90deg, #2C3E50, #34495E);
+  --spacing-section:     96px;
+}

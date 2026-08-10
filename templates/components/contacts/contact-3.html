@@ -1,0 +1,94 @@
+<!-- contact-3: Multi-step booking/quote form | Service businesses -->
+<section id="contact" class="ts-contact3" data-block="contact-3" aria-label="Book / Get Quote">
+  <div class="ts-contact3__container">
+    <div class="ts-contact3__header">
+      <span class="ts-section-label" data-editable="contact_label">[contact_label]</span>
+      <h2 class="ts-section-title" data-editable="contact_title">[contact_title]</h2>
+      <p class="ts-contact3__intro" data-editable="contact_intro">[contact_intro]</p>
+    </div>
+    <div class="ts-contact3__form-wrap">
+      <!-- Step indicators -->
+      <div class="ts-contact3__steps-indicator">
+        <div class="ts-contact3__step-ind active" data-ind="0"><span>1</span><p data-editable="step_ind_1">[step_ind_1]</p></div>
+        <div class="ts-contact3__step-line"></div>
+        <div class="ts-contact3__step-ind" data-ind="1"><span>2</span><p data-editable="step_ind_2">[step_ind_2]</p></div>
+        <div class="ts-contact3__step-line"></div>
+        <div class="ts-contact3__step-ind" data-ind="2"><span>3</span><p data-editable="step_ind_3">[step_ind_3]</p></div>
+      </div>
+      <form class="ts-contact3__form" onsubmit="return false;">
+        <!-- Step 1: Service selection -->
+        <div class="ts-contact3__step active" data-step="0">
+          <h3 data-editable="step1_heading">[step1_heading]</h3>
+          <div class="ts-contact3__service-grid">
+            <label class="ts-contact3__service-opt"><input type="radio" name="service" value="opt1" /><span class="ts-contact3__svc-icon" data-editable="svc_1_icon">[svc_1_icon]</span><span data-editable="svc_1_label">[svc_1_label]</span></label>
+            <label class="ts-contact3__service-opt"><input type="radio" name="service" value="opt2" /><span class="ts-contact3__svc-icon" data-editable="svc_2_icon">[svc_2_icon]</span><span data-editable="svc_2_label">[svc_2_label]</span></label>
+            <label class="ts-contact3__service-opt"><input type="radio" name="service" value="opt3" /><span class="ts-contact3__svc-icon" data-editable="svc_3_icon">[svc_3_icon]</span><span data-editable="svc_3_label">[svc_3_label]</span></label>
+            <label class="ts-contact3__service-opt"><input type="radio" name="service" value="opt4" /><span class="ts-contact3__svc-icon" data-editable="svc_4_icon">[svc_4_icon]</span><span data-editable="svc_4_label">[svc_4_label]</span></label>
+          </div>
+          <button type="button" class="ts-btn ts-btn--primary ts-contact3__next">Next →</button>
+        </div>
+        <!-- Step 2: Date/time -->
+        <div class="ts-contact3__step" data-step="1">
+          <h3 data-editable="step2_heading">[step2_heading]</h3>
+          <div class="ts-form-row">
+            <div class="ts-form-group"><label class="ts-form-label" data-editable="label_date">[label_date]</label><input type="date" class="ts-form-input" /></div>
+            <div class="ts-form-group"><label class="ts-form-label" data-editable="label_time">[label_time]</label><input type="time" class="ts-form-input" /></div>
+          </div>
+          <div class="ts-form-group"><label class="ts-form-label" data-editable="label_notes">[label_notes]</label><textarea class="ts-form-input ts-form-textarea" rows="3" placeholder="[placeholder_notes]"></textarea></div>
+          <div class="ts-contact3__nav-btns"><button type="button" class="ts-btn ts-btn--outline ts-contact3__prev">← Back</button><button type="button" class="ts-btn ts-btn--primary ts-contact3__next">Next →</button></div>
+        </div>
+        <!-- Step 3: Contact info + submit -->
+        <div class="ts-contact3__step" data-step="2">
+          <h3 data-editable="step3_heading">[step3_heading]</h3>
+          <div class="ts-form-row">
+            <div class="ts-form-group"><label class="ts-form-label" data-editable="label_name">[label_name]</label><input type="text" class="ts-form-input" required /></div>
+            <div class="ts-form-group"><label class="ts-form-label" data-editable="label_phone">[label_phone]</label><input type="tel" class="ts-form-input" required /></div>
+          </div>
+          <div class="ts-form-group"><label class="ts-form-label" data-editable="label_email">[label_email]</label><input type="email" class="ts-form-input" required /></div>
+          <div class="ts-contact3__nav-btns"><button type="button" class="ts-btn ts-btn--outline ts-contact3__prev">← Back</button><button type="submit" class="ts-btn ts-btn--primary ts-btn--lg" data-editable="contact_cta">[contact_cta]</button></div>
+          <p class="ts-contact3__privacy" data-editable="contact_privacy">[contact_privacy]</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<style>
+.ts-contact3 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-contact3__container { max-width: var(--container-narrow); margin: 0 auto; }
+.ts-contact3__header { text-align: center; margin-bottom: var(--spacing-10); }
+.ts-contact3__intro { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
+.ts-contact3__form-wrap { background: var(--color-surface); border-radius: var(--radius-card); border: 1px solid var(--color-border); padding: var(--spacing-8); box-shadow: var(--shadow-lg); }
+.ts-contact3__steps-indicator { display: flex; align-items: center; margin-bottom: var(--spacing-8); }
+.ts-contact3__step-ind { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-2); flex: 0; }
+.ts-contact3__step-ind span { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: var(--color-text-muted); transition: all var(--transition-normal); }
+.ts-contact3__step-ind p { font-family: var(--font-body); font-size: var(--font-size-xs); color: var(--color-text-muted); white-space: nowrap; }
+.ts-contact3__step-ind.active span { background: var(--color-primary); border-color: var(--color-primary); color: white; }
+.ts-contact3__step-ind.done span { background: var(--color-primary); border-color: var(--color-primary); color: white; }
+.ts-contact3__step-line { flex: 1; height: 2px; background: var(--color-border); margin: 0 var(--spacing-3) 20px; }
+.ts-contact3__step { display: none; }
+.ts-contact3__step.active { display: block; }
+.ts-contact3__step h3 { font-family: var(--font-headers); font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-6); }
+.ts-contact3__service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4); margin-bottom: var(--spacing-8); }
+.ts-contact3__service-opt { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3); border: 2px solid var(--color-border); border-radius: var(--radius-card); padding: var(--spacing-5); cursor: pointer; font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-text); font-weight: var(--font-weight-medium); transition: all var(--transition-fast); text-align: center; }
+.ts-contact3__service-opt input { display: none; }
+.ts-contact3__service-opt:has(input:checked) { border-color: var(--color-primary); background: var(--color-bg); box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+.ts-contact3__service-opt:hover { border-color: var(--color-primary); }
+.ts-contact3__svc-icon { font-size: 2rem; }
+.ts-contact3__nav-btns { display: flex; gap: var(--spacing-4); margin-top: var(--spacing-6); }
+.ts-contact3__privacy { font-family: var(--font-body); font-size: var(--font-size-xs); color: var(--color-text-muted); margin-top: var(--spacing-4); }
+</style>
+<script>
+(function() {
+  let cur = 0;
+  const steps = document.querySelectorAll('.ts-contact3__step');
+  const inds = document.querySelectorAll('.ts-contact3__step-ind');
+  function go(n) {
+    steps.forEach(s => s.classList.remove('active'));
+    inds.forEach((ind,i) => { ind.classList.toggle('active', i===n); ind.classList.toggle('done', i<n); });
+    steps[n]?.classList.add('active');
+    cur = n;
+  }
+  document.querySelectorAll('.ts-contact3__next').forEach(b => b.addEventListener('click', () => go(Math.min(cur+1, steps.length-1))));
+  document.querySelectorAll('.ts-contact3__prev').forEach(b => b.addEventListener('click', () => go(Math.max(cur-1, 0))));
+})();
+</script>

@@ -1,0 +1,30 @@
+/* TechSites Builder — Professional Services / B2B / Consulting niche tokens */
+:root {
+  --color-primary:       #0F4C81;
+  --color-primary-dark:  #0A3560;
+  --color-primary-light: #1565A7;
+  --color-secondary:     #1565A7;
+  --color-accent:        #00A896;
+  --color-accent-dark:   #007D70;
+  --color-bg:            #F8FAFB;
+  --color-bg-alt:        #F1F5F9;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #0F2942;
+  --color-overlay:       rgba(15, 76, 129, 0.75);
+  --color-text:          #1A2B3C;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #546E7A;
+  --color-border:        #E0E7EF;
+  --font-headers:        'Plus Jakarta Sans', 'Inter', Arial, sans-serif;
+  --font-body:           'Inter', 'Lato', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       6px;
+  --radius-card:         8px;
+  --radius-btn:          6px;
+  --radius-input:        6px;
+  --shadow-md:           0 4px 16px rgba(15, 76, 129, 0.10);
+  --shadow-lg:           0 8px 32px rgba(15, 76, 129, 0.15);
+  --gradient-hero:       linear-gradient(135deg, #0F4C81 0%, #1565A7 100%);
+  --gradient-cta:        linear-gradient(90deg, #00A896, #0F4C81);
+  --spacing-section:     96px;
+}

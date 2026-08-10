@@ -1,0 +1,114 @@
+<!-- menu-3: Side drawer (persistent desktop) | Mobile: Burger → full-screen | Multi-level nav -->
+<!-- NICHE: Real Estate, Professional Services | STYLE: Corporate, sidebar -->
+<div class="ts-nav3-wrapper" data-block="menu-3">
+  <!-- Sidebar (desktop) -->
+  <aside class="ts-nav3-sidebar" role="navigation" aria-label="Main navigation">
+    <a href="/" class="ts-nav3__logo">
+      <img src="[logo_url]" alt="[business_name]" class="ts-nav3__logo-img" data-editable="logo_url" data-editable-type="image" width="140" height="48" />
+    </a>
+    <nav class="ts-nav3__nav">
+      <ul role="list">
+        <li><a href="#home" class="ts-nav3__link active" data-editable="nav_link_1"><span class="ts-nav3__icon">🏠</span>[nav_link_1]</a></li>
+        <li><a href="#about" class="ts-nav3__link" data-editable="nav_link_2"><span class="ts-nav3__icon">ℹ️</span>[nav_link_2]</a></li>
+        <li><a href="#services" class="ts-nav3__link" data-editable="nav_link_3"><span class="ts-nav3__icon">💼</span>[nav_link_3]</a></li>
+        <li><a href="#contact" class="ts-nav3__link" data-editable="nav_link_4"><span class="ts-nav3__icon">📞</span>[nav_link_4]</a></li>
+      </ul>
+    </nav>
+    <div class="ts-nav3__bottom">
+      <a href="#contact" class="ts-btn ts-btn--primary ts-nav3__cta" data-editable="nav_cta">[nav_cta]</a>
+      <p class="ts-nav3__tagline" data-editable="nav_tagline">[nav_tagline]</p>
+    </div>
+  </aside>
+
+  <!-- Top bar (mobile) -->
+  <header class="ts-nav3-topbar">
+    <a href="/" class="ts-nav3__logo-mobile">
+      <img src="[logo_url]" alt="[business_name]" height="32" />
+    </a>
+    <button class="ts-nav3__burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+</div>
+
+<style>
+.ts-nav3-sidebar {
+  position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex; flex-direction: column; z-index: var(--z-sticky);
+  padding: var(--spacing-6) 0;
+}
+.ts-nav3__logo {
+  display: block; padding: 0 var(--spacing-6) var(--spacing-8);
+  border-bottom: 1px solid var(--color-border);
+}
+.ts-nav3__logo-img { height: 40px; width: auto; object-fit: contain; }
+.ts-nav3__nav { flex: 1; padding: var(--spacing-6) 0; overflow-y: auto; }
+.ts-nav3__nav ul { list-style: none; margin: 0; padding: 0; }
+.ts-nav3__link {
+  display: flex; align-items: center; gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-6);
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); color: var(--color-text-muted);
+  text-decoration: none; border-radius: 0 var(--radius-global) var(--radius-global) 0;
+  margin-right: var(--spacing-3);
+  transition: all var(--transition-fast);
+}
+.ts-nav3__link:hover, .ts-nav3__link.active {
+  background: var(--color-bg); color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+.ts-nav3__icon { font-size: 16px; width: 20px; text-align: center; }
+.ts-nav3__bottom { padding: var(--spacing-6); border-top: 1px solid var(--color-border); }
+.ts-nav3__cta { display: block; text-align: center; margin-bottom: var(--spacing-3); }
+.ts-nav3__tagline {
+  font-size: var(--font-size-xs); color: var(--color-text-muted);
+  text-align: center; margin: 0; line-height: var(--line-height-normal);
+}
+.ts-nav3-topbar {
+  display: none; position: sticky; top: 0; z-index: var(--z-sticky);
+  background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--spacing-4); height: 60px;
+  align-items: center; justify-content: space-between;
+}
+.ts-nav3__logo-mobile img { height: 30px; }
+.ts-nav3__burger {
+  background: none; border: none; cursor: pointer;
+  display: flex; flex-direction: column; gap: 5px; padding: var(--spacing-2);
+}
+.ts-nav3__burger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--color-text); border-radius: 2px;
+}
+/* Offset main content on desktop */
+body { padding-left: 240px; }
+@media (max-width: 1024px) {
+  body { padding-left: 0; }
+  .ts-nav3-sidebar { transform: translateX(-100%); transition: transform 0.3s ease; }
+  .ts-nav3-sidebar.open { transform: translateX(0); }
+  .ts-nav3-topbar { display: flex; }
+}
+</style>
+
+<script>
+(function() {
+  const sidebar = document.querySelector('.ts-nav3-sidebar');
+  const burger = document.querySelector('.ts-nav3__burger');
+  burger?.addEventListener('click', function() {
+    const open = sidebar.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  // Active link on scroll
+  const links = document.querySelectorAll('.ts-nav3__link');
+  window.addEventListener('scroll', function() {
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    links.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+})();
+</script>

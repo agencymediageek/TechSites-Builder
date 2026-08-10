@@ -1,0 +1,72 @@
+<!-- menu-1: Centered logo, links split left/right | Mobile: Bottom tab bar | Minimal elegant -->
+<!-- NICHE: Beauty, Luxury, Restaurant | STYLE: Editorial, symmetrical -->
+<nav class="ts-nav1" id="main-nav" data-block="menu-1" role="navigation" aria-label="Main navigation">
+  <div class="ts-nav1__container">
+    <ul class="ts-nav1__links ts-nav1__links--left" role="list">
+      <li><a href="#home" class="ts-nav1__link" data-editable="nav_link_1">[nav_link_1]</a></li>
+      <li><a href="#about" class="ts-nav1__link" data-editable="nav_link_2">[nav_link_2]</a></li>
+    </ul>
+    <a href="/" class="ts-nav1__logo" aria-label="[business_name] home">
+      <img src="[logo_url]" alt="[business_name]" class="ts-nav1__logo-img" data-editable="logo_url" data-editable-type="image" width="120" height="48" />
+    </a>
+    <ul class="ts-nav1__links ts-nav1__links--right" role="list">
+      <li><a href="#services" class="ts-nav1__link" data-editable="nav_link_3">[nav_link_3]</a></li>
+      <li><a href="#contact" class="ts-nav1__link ts-nav1__link--cta" data-editable="nav_link_4">[nav_link_4]</a></li>
+    </ul>
+  </div>
+  <!-- Mobile bottom tab bar -->
+  <nav class="ts-nav1__tabs" aria-label="Mobile navigation">
+    <a href="#home" class="ts-nav1__tab"><span>🏠</span><span>[nav_link_1]</span></a>
+    <a href="#about" class="ts-nav1__tab"><span>ℹ️</span><span>[nav_link_2]</span></a>
+    <a href="#services" class="ts-nav1__tab"><span>⭐</span><span>[nav_link_3]</span></a>
+    <a href="#contact" class="ts-nav1__tab"><span>📞</span><span>[nav_link_4]</span></a>
+  </nav>
+</nav>
+
+<style>
+.ts-nav1 {
+  position: sticky; top: 0; z-index: var(--z-sticky);
+  background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--spacing-6);
+}
+.ts-nav1__container {
+  max-width: var(--container-max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.ts-nav1__links {
+  display: flex; gap: var(--spacing-8); list-style: none;
+  margin: 0; padding: 0; flex: 1;
+}
+.ts-nav1__links--right { justify-content: flex-end; }
+.ts-nav1__logo { display: block; flex-shrink: 0; margin: 0 var(--spacing-6); }
+.ts-nav1__logo-img { height: 40px; width: auto; object-fit: contain; }
+.ts-nav1__link {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); color: var(--color-text);
+  text-decoration: none; letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase; transition: color var(--transition-fast);
+}
+.ts-nav1__link:hover { color: var(--color-primary); }
+.ts-nav1__link--cta {
+  color: var(--color-primary); font-weight: var(--font-weight-bold);
+}
+.ts-nav1__tabs { display: none; }
+@media (max-width: 768px) {
+  .ts-nav1__links { display: none; }
+  .ts-nav1__logo { margin: 0 auto; }
+  .ts-nav1__tabs {
+    display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--color-surface); border-top: 1px solid var(--color-border);
+    z-index: var(--z-sticky); padding: 4px 0;
+  }
+  .ts-nav1__tab {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    gap: 2px; padding: 4px 0; font-size: 10px; font-family: var(--font-body);
+    color: var(--color-text-muted); text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  .ts-nav1__tab:hover, .ts-nav1__tab.active { color: var(--color-primary); }
+  .ts-nav1__tab span:first-child { font-size: 20px; line-height: 1; }
+}
+</style>

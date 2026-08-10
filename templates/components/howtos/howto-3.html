@@ -1,0 +1,75 @@
+<!-- howto-3: Tabs/accordion FAQ style | Restaurant menu, Services -->
+<section id="services" class="ts-howto3" data-block="howto-3" aria-label="Services & FAQ">
+  <div class="ts-howto3__container">
+    <div class="ts-howto3__header">
+      <span class="ts-section-label" data-editable="howto_label">[howto_label]</span>
+      <h2 class="ts-section-title" data-editable="howto_title">[howto_title]</h2>
+    </div>
+    <div class="ts-howto3__tabs-wrap">
+      <div class="ts-howto3__tabs" role="tablist">
+        <button class="ts-howto3__tab active" role="tab" aria-selected="true" data-tab="0" data-editable="tab_1_label">[tab_1_label]</button>
+        <button class="ts-howto3__tab" role="tab" aria-selected="false" data-tab="1" data-editable="tab_2_label">[tab_2_label]</button>
+        <button class="ts-howto3__tab" role="tab" aria-selected="false" data-tab="2" data-editable="tab_3_label">[tab_3_label]</button>
+        <button class="ts-howto3__tab" role="tab" aria-selected="false" data-tab="3" data-editable="tab_4_label">[tab_4_label]</button>
+      </div>
+      <div class="ts-howto3__panels">
+        <div class="ts-howto3__panel active" data-panel="0">
+          <div class="ts-howto3__panel-grid">
+            <div class="ts-howto3__item"><span class="ts-howto3__item-icon" data-editable="tab1_item1_icon">[tab1_item1_icon]</span><h4 data-editable="tab1_item1_title">[tab1_item1_title]</h4><p data-editable="tab1_item1_text">[tab1_item1_text]</p><span class="ts-howto3__price" data-editable="tab1_item1_price">[tab1_item1_price]</span></div>
+            <div class="ts-howto3__item"><span class="ts-howto3__item-icon" data-editable="tab1_item2_icon">[tab1_item2_icon]</span><h4 data-editable="tab1_item2_title">[tab1_item2_title]</h4><p data-editable="tab1_item2_text">[tab1_item2_text]</p><span class="ts-howto3__price" data-editable="tab1_item2_price">[tab1_item2_price]</span></div>
+            <div class="ts-howto3__item"><span class="ts-howto3__item-icon" data-editable="tab1_item3_icon">[tab1_item3_icon]</span><h4 data-editable="tab1_item3_title">[tab1_item3_title]</h4><p data-editable="tab1_item3_text">[tab1_item3_text]</p><span class="ts-howto3__price" data-editable="tab1_item3_price">[tab1_item3_price]</span></div>
+          </div>
+        </div>
+        <div class="ts-howto3__panel" data-panel="1">
+          <div class="ts-howto3__panel-grid">
+            <div class="ts-howto3__item"><h4 data-editable="tab2_item1_title">[tab2_item1_title]</h4><p data-editable="tab2_item1_text">[tab2_item1_text]</p><span class="ts-howto3__price" data-editable="tab2_item1_price">[tab2_item1_price]</span></div>
+            <div class="ts-howto3__item"><h4 data-editable="tab2_item2_title">[tab2_item2_title]</h4><p data-editable="tab2_item2_text">[tab2_item2_text]</p><span class="ts-howto3__price" data-editable="tab2_item2_price">[tab2_item2_price]</span></div>
+          </div>
+        </div>
+        <div class="ts-howto3__panel" data-panel="2">
+          <div class="ts-howto3__panel-grid">
+            <div class="ts-howto3__item"><h4 data-editable="tab3_item1_title">[tab3_item1_title]</h4><p data-editable="tab3_item1_text">[tab3_item1_text]</p><span class="ts-howto3__price" data-editable="tab3_item1_price">[tab3_item1_price]</span></div>
+          </div>
+        </div>
+        <div class="ts-howto3__panel" data-panel="3">
+          <div class="ts-howto3__panel-grid">
+            <div class="ts-howto3__item"><h4 data-editable="tab4_item1_title">[tab4_item1_title]</h4><p data-editable="tab4_item1_text">[tab4_item1_text]</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-howto3 { background: var(--color-bg-alt); padding: var(--spacing-section) var(--spacing-6); }
+.ts-howto3__container { max-width: var(--container-max); margin: 0 auto; }
+.ts-howto3__header { text-align: center; margin-bottom: var(--spacing-10); }
+.ts-howto3__tabs { display: flex; gap: 0; border-bottom: 2px solid var(--color-border); margin-bottom: var(--spacing-8); overflow-x: auto; }
+.ts-howto3__tab { background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; padding: var(--spacing-4) var(--spacing-6); font-family: var(--font-body); font-size: var(--font-size-base); font-weight: var(--font-weight-medium); color: var(--color-text-muted); cursor: pointer; white-space: nowrap; transition: all var(--transition-fast); }
+.ts-howto3__tab:hover { color: var(--color-primary); }
+.ts-howto3__tab.active { color: var(--color-primary); border-bottom-color: var(--color-primary); font-weight: var(--font-weight-bold); }
+.ts-howto3__panel { display: none; }
+.ts-howto3__panel.active { display: block; }
+.ts-howto3__panel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--spacing-6); }
+.ts-howto3__item { background: var(--color-surface); border-radius: var(--radius-card); padding: var(--spacing-6); border: 1px solid var(--color-border); transition: box-shadow var(--transition-normal); }
+.ts-howto3__item:hover { box-shadow: var(--shadow-md); }
+.ts-howto3__item-icon { font-size: 2rem; display: block; margin-bottom: var(--spacing-4); }
+.ts-howto3__item h4 { font-family: var(--font-headers); font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-3); }
+.ts-howto3__item p { font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: var(--line-height-normal); margin: 0 0 var(--spacing-4); }
+.ts-howto3__price { font-family: var(--font-headers); font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-primary); }
+</style>
+<script>
+(function() {
+  const tabs = document.querySelectorAll('.ts-howto3__tab');
+  const panels = document.querySelectorAll('.ts-howto3__panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const idx = this.dataset.tab;
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      panels.forEach(p => p.classList.remove('active'));
+      this.classList.add('active'); this.setAttribute('aria-selected','true');
+      document.querySelector('[data-panel="'+idx+'"]')?.classList.add('active');
+    });
+  });
+})();
+</script>

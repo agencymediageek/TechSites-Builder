@@ -1,0 +1,30 @@
+/* TechSites Builder — Veterinary / Pet Care niche tokens */
+:root {
+  --color-primary:       #FF8C42;
+  --color-primary-dark:  #E07430;
+  --color-primary-light: #FFA566;
+  --color-secondary:     #E07430;
+  --color-accent:        #4ECDC4;
+  --color-accent-dark:   #38B2AA;
+  --color-bg:            #FFFAF5;
+  --color-bg-alt:        #FFF3E8;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #2C1A0E;
+  --color-overlay:       rgba(44, 26, 14, 0.60);
+  --color-text:          #2C1810;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #7A5C4A;
+  --color-border:        #FFE5CC;
+  --font-headers:        'Nunito', 'Fredoka One', Arial, sans-serif;
+  --font-body:           'Nunito', 'Lato', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       20px;
+  --radius-card:         20px;
+  --radius-btn:          50px;
+  --radius-input:        12px;
+  --shadow-md:           0 4px 20px rgba(255, 140, 66, 0.18);
+  --shadow-lg:           0 8px 36px rgba(255, 140, 66, 0.25);
+  --gradient-hero:       linear-gradient(135deg, #FF8C42 0%, #4ECDC4 100%);
+  --gradient-cta:        linear-gradient(90deg, #FF8C42, #FFA566);
+  --spacing-section:     80px;
+}

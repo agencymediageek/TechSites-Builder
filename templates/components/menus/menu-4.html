@@ -1,0 +1,161 @@
+<!-- menu-4: Mega-menu on hover, category grouping | Mobile: Off-canvas | Elegant -->
+<!-- NICHE: E-commerce, Education, Services | STYLE: Full dropdown mega-menu -->
+<nav class="ts-nav4" id="main-nav" data-block="menu-4" role="navigation" aria-label="Main navigation">
+  <div class="ts-nav4__bar">
+    <div class="ts-nav4__container">
+      <a href="/" class="ts-nav4__logo">
+        <img src="[logo_url]" alt="[business_name]" height="36" data-editable="logo_url" data-editable-type="image" />
+      </a>
+      <ul class="ts-nav4__links" role="list">
+        <li class="ts-nav4__item">
+          <a href="#home" class="ts-nav4__link" data-editable="nav_link_1">[nav_link_1]</a>
+        </li>
+        <li class="ts-nav4__item ts-nav4__item--has-dropdown">
+          <a href="#services" class="ts-nav4__link" data-editable="nav_link_2">[nav_link_2] ▾</a>
+          <div class="ts-nav4__dropdown">
+            <div class="ts-nav4__dropdown-col">
+              <h4 class="ts-nav4__dropdown-title" data-editable="nav_cat_1">[nav_cat_1]</h4>
+              <ul>
+                <li><a href="#" data-editable="nav_sub_1">[nav_sub_1]</a></li>
+                <li><a href="#" data-editable="nav_sub_2">[nav_sub_2]</a></li>
+                <li><a href="#" data-editable="nav_sub_3">[nav_sub_3]</a></li>
+              </ul>
+            </div>
+            <div class="ts-nav4__dropdown-col">
+              <h4 class="ts-nav4__dropdown-title" data-editable="nav_cat_2">[nav_cat_2]</h4>
+              <ul>
+                <li><a href="#" data-editable="nav_sub_4">[nav_sub_4]</a></li>
+                <li><a href="#" data-editable="nav_sub_5">[nav_sub_5]</a></li>
+                <li><a href="#" data-editable="nav_sub_6">[nav_sub_6]</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="ts-nav4__item">
+          <a href="#about" class="ts-nav4__link" data-editable="nav_link_3">[nav_link_3]</a>
+        </li>
+        <li class="ts-nav4__item">
+          <a href="#contact" class="ts-nav4__link" data-editable="nav_link_4">[nav_link_4]</a>
+        </li>
+      </ul>
+      <div class="ts-nav4__actions">
+        <a href="#contact" class="ts-btn ts-btn--primary" data-editable="nav_cta">[nav_cta]</a>
+      </div>
+      <button class="ts-nav4__burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="ts-nav4__offcanvas" id="nav4-offcanvas">
+    <div class="ts-nav4__offcanvas-inner">
+      <button class="ts-nav4__close" aria-label="Close menu">✕</button>
+      <ul>
+        <li><a href="#home">[nav_link_1]</a></li>
+        <li><a href="#services">[nav_link_2]</a></li>
+        <li><a href="#about">[nav_link_3]</a></li>
+        <li><a href="#contact">[nav_link_4]</a></li>
+        <li><a href="#contact" class="ts-btn ts-btn--primary">[nav_cta]</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ts-nav4__backdrop" id="nav4-backdrop"></div>
+</nav>
+
+<style>
+.ts-nav4 { position: sticky; top: 0; z-index: var(--z-sticky); }
+.ts-nav4__bar {
+  background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--spacing-6);
+}
+.ts-nav4__container {
+  max-width: var(--container-max); margin: 0 auto;
+  display: flex; align-items: center; gap: var(--spacing-6); height: 68px;
+}
+.ts-nav4__logo img { height: 36px; width: auto; }
+.ts-nav4__links {
+  display: flex; gap: 0; list-style: none; margin: 0 0 0 auto; padding: 0;
+}
+.ts-nav4__item { position: relative; }
+.ts-nav4__link {
+  display: block; padding: var(--spacing-6) var(--spacing-5);
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); color: var(--color-text);
+  text-decoration: none; height: 68px; line-height: 68px;
+  transition: color var(--transition-fast);
+}
+.ts-nav4__link:hover { color: var(--color-primary); }
+.ts-nav4__dropdown {
+  display: none; position: absolute; top: 100%; left: -40px;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg); border-radius: 0 0 var(--radius-card) var(--radius-card);
+  padding: var(--spacing-6); gap: var(--spacing-8);
+  min-width: 420px; z-index: var(--z-dropdown);
+}
+.ts-nav4__item--has-dropdown:hover .ts-nav4__dropdown { display: flex; }
+.ts-nav4__dropdown-col { flex: 1; }
+.ts-nav4__dropdown-title {
+  font-family: var(--font-headers); font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold); color: var(--color-primary);
+  letter-spacing: var(--letter-spacing-wider); text-transform: uppercase;
+  margin: 0 0 var(--spacing-3); padding-bottom: var(--spacing-3);
+  border-bottom: 1px solid var(--color-border);
+}
+.ts-nav4__dropdown-col ul { list-style: none; margin: 0; padding: 0; }
+.ts-nav4__dropdown-col ul li a {
+  display: block; padding: var(--spacing-2) 0;
+  font-size: var(--font-size-sm); color: var(--color-text-muted);
+  text-decoration: none; transition: color var(--transition-fast);
+}
+.ts-nav4__dropdown-col ul li a:hover { color: var(--color-primary); }
+.ts-nav4__actions { margin-left: var(--spacing-6); }
+.ts-nav4__burger {
+  display: none; background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; padding: 4px; margin-left: var(--spacing-4);
+}
+.ts-nav4__burger span { display: block; width: 22px; height: 2px; background: var(--color-text); border-radius: 2px; }
+.ts-nav4__offcanvas {
+  position: fixed; right: -100%; top: 0; bottom: 0; width: 300px;
+  background: var(--color-surface); z-index: var(--z-modal);
+  box-shadow: var(--shadow-xl); transition: right 0.3s ease;
+}
+.ts-nav4__offcanvas.open { right: 0; }
+.ts-nav4__offcanvas-inner { padding: var(--spacing-8) var(--spacing-6); }
+.ts-nav4__close {
+  background: none; border: none; cursor: pointer; font-size: 20px;
+  float: right; margin-bottom: var(--spacing-6); color: var(--color-text);
+}
+.ts-nav4__offcanvas ul { list-style: none; margin: 0; padding: 0; clear: both; }
+.ts-nav4__offcanvas ul li { margin-bottom: var(--spacing-4); }
+.ts-nav4__offcanvas ul li a {
+  font-family: var(--font-body); font-size: var(--font-size-base);
+  color: var(--color-text); text-decoration: none; display: block;
+  padding: var(--spacing-3) 0;
+}
+.ts-nav4__backdrop {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); z-index: var(--z-overlay);
+}
+.ts-nav4__backdrop.open { display: block; }
+@media (max-width: 768px) {
+  .ts-nav4__links, .ts-nav4__actions { display: none; }
+  .ts-nav4__burger { display: flex; }
+}
+</style>
+
+<script>
+(function() {
+  const burger = document.querySelector('.ts-nav4__burger');
+  const offcanvas = document.getElementById('nav4-offcanvas');
+  const backdrop = document.getElementById('nav4-backdrop');
+  const close = document.querySelector('.ts-nav4__close');
+  function toggle(open) {
+    offcanvas.classList.toggle('open', open);
+    backdrop.classList.toggle('open', open);
+    burger?.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger?.addEventListener('click', () => toggle(true));
+  close?.addEventListener('click', () => toggle(false));
+  backdrop?.addEventListener('click', () => toggle(false));
+})();
+</script>

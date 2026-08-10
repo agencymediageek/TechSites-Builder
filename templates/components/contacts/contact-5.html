@@ -1,0 +1,84 @@
+<!-- contact-5: FAQ accordion + contact info | Reduce friction -->
+<section id="contact" class="ts-contact5" data-block="contact-5" aria-label="FAQ & Contact">
+  <div class="ts-contact5__container">
+    <div class="ts-contact5__header">
+      <span class="ts-section-label" data-editable="contact_label">[contact_label]</span>
+      <h2 class="ts-section-title" data-editable="contact_title">[contact_title]</h2>
+    </div>
+    <div class="ts-contact5__layout">
+      <div class="ts-contact5__faq">
+        <h3 class="ts-contact5__faq-heading" data-editable="faq_heading">[faq_heading]</h3>
+        <div class="ts-contact5__accordion">
+          <div class="ts-contact5__item"><button class="ts-contact5__question" aria-expanded="false" data-editable="faq_1_q">[faq_1_q] <span class="ts-contact5__arrow">+</span></button><div class="ts-contact5__answer" hidden><p data-editable="faq_1_a">[faq_1_a]</p></div></div>
+          <div class="ts-contact5__item"><button class="ts-contact5__question" aria-expanded="false" data-editable="faq_2_q">[faq_2_q] <span class="ts-contact5__arrow">+</span></button><div class="ts-contact5__answer" hidden><p data-editable="faq_2_a">[faq_2_a]</p></div></div>
+          <div class="ts-contact5__item"><button class="ts-contact5__question" aria-expanded="false" data-editable="faq_3_q">[faq_3_q] <span class="ts-contact5__arrow">+</span></button><div class="ts-contact5__answer" hidden><p data-editable="faq_3_a">[faq_3_a]</p></div></div>
+          <div class="ts-contact5__item"><button class="ts-contact5__question" aria-expanded="false" data-editable="faq_4_q">[faq_4_q] <span class="ts-contact5__arrow">+</span></button><div class="ts-contact5__answer" hidden><p data-editable="faq_4_a">[faq_4_a]</p></div></div>
+          <div class="ts-contact5__item"><button class="ts-contact5__question" aria-expanded="false" data-editable="faq_5_q">[faq_5_q] <span class="ts-contact5__arrow">+</span></button><div class="ts-contact5__answer" hidden><p data-editable="faq_5_a">[faq_5_a]</p></div></div>
+          <div class="ts-contact5__item"><button class="ts-contact5__question" aria-expanded="false" data-editable="faq_6_q">[faq_6_q] <span class="ts-contact5__arrow">+</span></button><div class="ts-contact5__answer" hidden><p data-editable="faq_6_a">[faq_6_a]</p></div></div>
+        </div>
+      </div>
+      <div class="ts-contact5__contact-col">
+        <div class="ts-contact5__still-qs">
+          <h3 data-editable="still_qs_title">[still_qs_title]</h3>
+          <p data-editable="still_qs_text">[still_qs_text]</p>
+          <div class="ts-contact5__channels">
+            <a href="https://wa.me/[whatsapp_number]" class="ts-btn ts-btn--primary" style="width:100%;justify-content:center;" target="_blank" data-editable="wa_cta">[wa_cta]</a>
+            <a href="mailto:[info_email]" class="ts-btn ts-btn--outline" style="width:100%;justify-content:center;" data-editable="email_cta">[email_cta]</a>
+            <a href="tel:[info_phone]" class="ts-btn ts-btn--outline" style="width:100%;justify-content:center;" data-editable="phone_cta">[phone_cta]</a>
+          </div>
+        </div>
+        <div class="ts-contact5__hours-card">
+          <h4 data-editable="hours_title">[hours_title]</h4>
+          <ul class="ts-contact5__hours-list">
+            <li><span data-editable="hours_weekday_label">[hours_weekday_label]</span><span data-editable="hours_weekday">[hours_weekday]</span></li>
+            <li><span data-editable="hours_saturday_label">[hours_saturday_label]</span><span data-editable="hours_saturday">[hours_saturday]</span></li>
+            <li><span data-editable="hours_sunday_label">[hours_sunday_label]</span><span data-editable="hours_sunday">[hours_sunday]</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-contact5 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-contact5__container { max-width: var(--container-max); margin: 0 auto; }
+.ts-contact5__header { text-align: center; margin-bottom: var(--spacing-12); }
+.ts-contact5__layout { display: grid; grid-template-columns: 3fr 2fr; gap: var(--spacing-12); }
+.ts-contact5__faq-heading { font-family: var(--font-headers); font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-6); }
+.ts-contact5__accordion { display: flex; flex-direction: column; }
+.ts-contact5__item { border-bottom: 1px solid var(--color-border); }
+.ts-contact5__question { width: 100%; background: none; border: none; padding: var(--spacing-5) 0; font-family: var(--font-body); font-size: var(--font-size-base); font-weight: var(--font-weight-medium); color: var(--color-text); text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-4); transition: color var(--transition-fast); }
+.ts-contact5__question:hover { color: var(--color-primary); }
+.ts-contact5__question[aria-expanded="true"] { color: var(--color-primary); font-weight: var(--font-weight-bold); }
+.ts-contact5__arrow { font-size: 1.5rem; flex-shrink: 0; transition: transform var(--transition-normal); }
+.ts-contact5__question[aria-expanded="true"] .ts-contact5__arrow { transform: rotate(45deg); }
+.ts-contact5__answer { padding: 0 0 var(--spacing-5); }
+.ts-contact5__answer p { font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text-muted); line-height: var(--line-height-relaxed); margin: 0; }
+.ts-contact5__still-qs { background: var(--color-surface); border-radius: var(--radius-card); border: 1px solid var(--color-border); padding: var(--spacing-7); margin-bottom: var(--spacing-6); }
+.ts-contact5__still-qs h3 { font-family: var(--font-headers); font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-4); }
+.ts-contact5__still-qs p { font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text-muted); margin: 0 0 var(--spacing-6); }
+.ts-contact5__channels { display: flex; flex-direction: column; gap: var(--spacing-3); }
+.ts-contact5__hours-card { background: var(--color-primary); border-radius: var(--radius-card); padding: var(--spacing-6); }
+.ts-contact5__hours-card h4 { font-family: var(--font-headers); font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-text-inverse); margin: 0 0 var(--spacing-5); }
+.ts-contact5__hours-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--spacing-3); }
+.ts-contact5__hours-list li { display: flex; justify-content: space-between; font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.90); }
+.ts-contact5__hours-list li span:first-child { font-weight: var(--font-weight-medium); }
+@media (max-width: 768px) { .ts-contact5__layout { grid-template-columns: 1fr; } }
+</style>
+<script>
+(function() {
+  document.querySelectorAll('.ts-contact5__question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.ts-contact5__question').forEach(b => {
+        b.setAttribute('aria-expanded','false');
+        b.nextElementSibling?.setAttribute('hidden','');
+      });
+      if (!expanded) {
+        this.setAttribute('aria-expanded','true');
+        this.nextElementSibling?.removeAttribute('hidden');
+      }
+    });
+  });
+})();
+</script>

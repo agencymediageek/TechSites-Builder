@@ -1,0 +1,30 @@
+/* TechSites Builder — Food & Beverage / Restaurant / Café niche tokens */
+:root {
+  --color-primary:       #C0392B;
+  --color-primary-dark:  #992D22;
+  --color-primary-light: #E74C3C;
+  --color-secondary:     #4A1F0F;
+  --color-accent:        #F39C12;
+  --color-accent-dark:   #D68910;
+  --color-bg:            #FFF8F0;
+  --color-bg-alt:        #FEF0E0;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #2C1810;
+  --color-overlay:       rgba(44, 24, 16, 0.65);
+  --color-text:          #2C1810;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #6B4F3A;
+  --color-border:        #FDEBD0;
+  --font-headers:        'Poppins', 'Raleway', Georgia, sans-serif;
+  --font-body:           'Lato', 'Roboto', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       16px;
+  --radius-card:         20px;
+  --radius-btn:          8px;
+  --radius-input:        8px;
+  --shadow-md:           0 4px 20px rgba(192, 57, 43, 0.12);
+  --shadow-lg:           0 8px 40px rgba(192, 57, 43, 0.18);
+  --gradient-hero:       linear-gradient(135deg, #2C1810 0%, #4A1F0F 100%);
+  --gradient-cta:        linear-gradient(90deg, #C0392B, #E74C3C);
+  --spacing-section:     80px;
+}

@@ -1,0 +1,15 @@
+name = "ts-builder-proxy"
+main = "index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Non-secret environment variables
+ENVIRONMENT = "production"
+
+# Secret bindings (set via: wrangler secret put GROK_KEY)
+# GROK_KEY — xAI API key (secret_text — never plain_text)
+
+[[routes]]
+pattern = "builder.techsites.ai/*"
+zone_name = "techsites.ai"

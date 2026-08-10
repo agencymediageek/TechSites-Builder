@@ -1,0 +1,81 @@
+<!-- contact-2: WhatsApp floating CTA + modal form | Local businesses -->
+<section id="contact" class="ts-contact2" data-block="contact-2" aria-label="Contact">
+  <div class="ts-contact2__container">
+    <div class="ts-contact2__visual">
+      <img src="[contact_image_url]" alt="[contact_image_alt]" class="ts-contact2__img" data-editable="contact_image_url" data-editable-type="image" />
+    </div>
+    <div class="ts-contact2__content">
+      <span class="ts-section-label" data-editable="contact_label">[contact_label]</span>
+      <h2 class="ts-section-title" data-editable="contact_title">[contact_title]</h2>
+      <p class="ts-contact2__text" data-editable="contact_text">[contact_text]</p>
+      <div class="ts-contact2__options">
+        <a href="https://wa.me/[whatsapp_number]" target="_blank" rel="noopener" class="ts-contact2__option ts-contact2__option--whatsapp" data-editable="whatsapp_number" data-editable-type="link">
+          <span class="ts-contact2__option-icon">💬</span>
+          <div><strong data-editable="whatsapp_label">[whatsapp_label]</strong><span data-editable="whatsapp_subtext">[whatsapp_subtext]</span></div>
+        </a>
+        <a href="tel:[phone_number]" class="ts-contact2__option" data-editable="phone_number" data-editable-type="link">
+          <span class="ts-contact2__option-icon">📞</span>
+          <div><strong data-editable="phone_label">[phone_label]</strong><span data-editable="phone_number_display">[phone_number]</span></div>
+        </a>
+        <a href="mailto:[email_address]" class="ts-contact2__option" data-editable="email_address" data-editable-type="link">
+          <span class="ts-contact2__option-icon">📧</span>
+          <div><strong data-editable="email_label">[email_label]</strong><span data-editable="email_address">[email_address]</span></div>
+        </a>
+      </div>
+      <button class="ts-btn ts-btn--primary ts-btn--lg ts-contact2__form-trigger" data-editable="contact_cta">[contact_cta]</button>
+    </div>
+  </div>
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/[whatsapp_number]" target="_blank" rel="noopener" class="ts-contact2__wa-float" aria-label="WhatsApp">
+    <span>💬</span>
+    <span class="ts-contact2__wa-label" data-editable="wa_float_label">[wa_float_label]</span>
+  </a>
+  <!-- Simple modal form -->
+  <div class="ts-contact2__modal" id="ts-contact-modal" hidden>
+    <div class="ts-contact2__modal-box">
+      <button class="ts-contact2__modal-close" aria-label="Close">✕</button>
+      <h3 data-editable="form_title">[form_title]</h3>
+      <form onsubmit="return false;">
+        <div class="ts-form-group"><label class="ts-form-label">[label_name]</label><input type="text" class="ts-form-input" required /></div>
+        <div class="ts-form-group"><label class="ts-form-label">[label_email]</label><input type="email" class="ts-form-input" required /></div>
+        <div class="ts-form-group"><label class="ts-form-label">[label_phone]</label><input type="tel" class="ts-form-input" /></div>
+        <div class="ts-form-group"><label class="ts-form-label">[label_message]</label><textarea class="ts-form-input ts-form-textarea" rows="4"></textarea></div>
+        <button type="submit" class="ts-btn ts-btn--primary" style="width:100%" data-editable="form_cta">[form_cta]</button>
+      </form>
+    </div>
+  </div>
+</section>
+<style>
+.ts-contact2 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-contact2__container { max-width: var(--container-max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-12); align-items: center; }
+.ts-contact2__img { width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius-card); box-shadow: var(--shadow-xl); }
+.ts-contact2__text { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); margin: 0 0 var(--spacing-8); }
+.ts-contact2__options { display: flex; flex-direction: column; gap: var(--spacing-4); margin-bottom: var(--spacing-8); }
+.ts-contact2__option { display: flex; align-items: center; gap: var(--spacing-5); background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: var(--radius-card); padding: var(--spacing-5) var(--spacing-6); text-decoration: none; transition: all var(--transition-normal); }
+.ts-contact2__option:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateX(4px); }
+.ts-contact2__option--whatsapp { border-color: #25D366; background: #f0fdf4; }
+.ts-contact2__option--whatsapp:hover { background: #dcfce7; box-shadow: 0 4px 12px rgba(37,211,102,0.25); }
+.ts-contact2__option-icon { font-size: 1.8rem; flex-shrink: 0; }
+.ts-contact2__option strong { display: block; font-family: var(--font-headers); font-size: var(--font-size-base); font-weight: var(--font-weight-bold); color: var(--color-text); }
+.ts-contact2__option span { font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-text-muted); }
+.ts-contact2__wa-float { position: fixed; bottom: var(--spacing-6); right: var(--spacing-6); z-index: 9999; display: flex; align-items: center; gap: var(--spacing-3); background: #25D366; color: white; text-decoration: none; padding: var(--spacing-3) var(--spacing-5); border-radius: var(--radius-pill); box-shadow: var(--shadow-xl); font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); transition: transform var(--transition-fast); }
+.ts-contact2__wa-float:hover { transform: scale(1.05); }
+.ts-contact2__wa-label { display: none; }
+@media (min-width: 768px) { .ts-contact2__wa-label { display: inline; } }
+.ts-contact2__modal { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center; padding: var(--spacing-6); background: rgba(0,0,0,0.60); backdrop-filter: blur(4px); }
+.ts-contact2__modal[hidden] { display: none; }
+.ts-contact2__modal-box { background: var(--color-surface); border-radius: var(--radius-card); padding: var(--spacing-8); max-width: 480px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-xl); }
+.ts-contact2__modal-close { position: absolute; top: var(--spacing-4); right: var(--spacing-4); background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--color-text-muted); }
+.ts-contact2__modal-box h3 { font-family: var(--font-headers); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-6); }
+@media (max-width: 768px) { .ts-contact2__container { grid-template-columns: 1fr; } .ts-contact2__img { height: 260px; } }
+</style>
+<script>
+(function() {
+  const trigger = document.querySelector('.ts-contact2__form-trigger');
+  const modal = document.getElementById('ts-contact-modal');
+  const close = modal?.querySelector('.ts-contact2__modal-close');
+  trigger?.addEventListener('click', () => modal?.removeAttribute('hidden'));
+  close?.addEventListener('click', () => modal?.setAttribute('hidden',''));
+  modal?.addEventListener('click', function(e) { if (e.target === this) this.setAttribute('hidden',''); });
+})();
+</script>

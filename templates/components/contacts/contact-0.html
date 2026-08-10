@@ -1,0 +1,94 @@
+<!-- contact-0: Split layout | Form left + info right | All niches -->
+<section id="contact" class="ts-contact0" data-block="contact-0" aria-label="Contact">
+  <div class="ts-contact0__container">
+    <div class="ts-contact0__form-col">
+      <span class="ts-section-label" data-editable="contact_label">[contact_label]</span>
+      <h2 class="ts-section-title" data-editable="contact_title">[contact_title]</h2>
+      <p class="ts-contact0__intro" data-editable="contact_intro">[contact_intro]</p>
+      <form class="ts-contact0__form" onsubmit="return false;">
+        <div class="ts-form-row">
+          <div class="ts-form-group">
+            <label class="ts-form-label" data-editable="label_name">[label_name]</label>
+            <input type="text" class="ts-form-input" placeholder="[placeholder_name]" required />
+          </div>
+          <div class="ts-form-group">
+            <label class="ts-form-label" data-editable="label_phone">[label_phone]</label>
+            <input type="tel" class="ts-form-input" placeholder="[placeholder_phone]" />
+          </div>
+        </div>
+        <div class="ts-form-group">
+          <label class="ts-form-label" data-editable="label_email">[label_email]</label>
+          <input type="email" class="ts-form-input" placeholder="[placeholder_email]" required />
+        </div>
+        <div class="ts-form-group">
+          <label class="ts-form-label" data-editable="label_subject">[label_subject]</label>
+          <input type="text" class="ts-form-input" placeholder="[placeholder_subject]" />
+        </div>
+        <div class="ts-form-group">
+          <label class="ts-form-label" data-editable="label_message">[label_message]</label>
+          <textarea class="ts-form-input ts-form-textarea" rows="5" placeholder="[placeholder_message]" required></textarea>
+        </div>
+        <button type="submit" class="ts-btn ts-btn--primary ts-btn--lg ts-contact0__submit" data-editable="contact_cta">[contact_cta]</button>
+        <p class="ts-contact0__privacy" data-editable="contact_privacy">[contact_privacy]</p>
+      </form>
+    </div>
+    <div class="ts-contact0__info-col">
+      <div class="ts-contact0__info-card">
+        <h3 class="ts-contact0__info-title" data-editable="info_title">[info_title]</h3>
+        <div class="ts-contact0__info-item">
+          <span class="ts-contact0__info-icon">📍</span>
+          <div><strong data-editable="info_address_label">[info_address_label]</strong><p data-editable="info_address">[info_address]</p></div>
+        </div>
+        <div class="ts-contact0__info-item">
+          <span class="ts-contact0__info-icon">📞</span>
+          <div><strong data-editable="info_phone_label">[info_phone_label]</strong><p><a href="tel:[info_phone]" data-editable="info_phone">[info_phone]</a></p></div>
+        </div>
+        <div class="ts-contact0__info-item">
+          <span class="ts-contact0__info-icon">📧</span>
+          <div><strong data-editable="info_email_label">[info_email_label]</strong><p><a href="mailto:[info_email]" data-editable="info_email">[info_email]</a></p></div>
+        </div>
+        <div class="ts-contact0__info-item">
+          <span class="ts-contact0__info-icon">⏰</span>
+          <div><strong data-editable="info_hours_label">[info_hours_label]</strong><p data-editable="info_hours">[info_hours]</p></div>
+        </div>
+        <div class="ts-contact0__social">
+          <a href="[social_instagram]" class="ts-contact0__social-btn" aria-label="Instagram" data-editable="social_instagram" data-editable-type="link">📷</a>
+          <a href="[social_facebook]" class="ts-contact0__social-btn" aria-label="Facebook" data-editable="social_facebook" data-editable-type="link">📘</a>
+          <a href="[social_whatsapp]" class="ts-contact0__social-btn" aria-label="WhatsApp" data-editable="social_whatsapp" data-editable-type="link">💬</a>
+        </div>
+      </div>
+      <div class="ts-contact0__map">
+        <iframe src="[map_embed_url]" class="ts-contact0__map-iframe" title="Location" loading="lazy" allowfullscreen data-editable="map_embed_url" data-editable-type="link"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.ts-contact0 { background: var(--color-bg-alt); padding: var(--spacing-section) var(--spacing-6); }
+.ts-contact0__container { max-width: var(--container-max); margin: 0 auto; display: grid; grid-template-columns: 3fr 2fr; gap: var(--spacing-12); align-items: start; }
+.ts-contact0__intro { font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text-muted); line-height: var(--line-height-relaxed); margin: 0 0 var(--spacing-8); }
+/* Shared form styles */
+.ts-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4); }
+.ts-form-group { display: flex; flex-direction: column; gap: var(--spacing-2); margin-bottom: var(--spacing-5); }
+.ts-form-label { font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--color-text); }
+.ts-form-input { padding: var(--spacing-3) var(--spacing-4); border: 1.5px solid var(--color-border); border-radius: var(--radius-global); background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); font-size: var(--font-size-base); transition: border-color var(--transition-fast), box-shadow var(--transition-fast); outline: none; }
+.ts-form-input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(var(--color-primary-raw, 59,130,246),0.15); }
+.ts-form-input::placeholder { color: var(--color-text-placeholder); }
+.ts-form-textarea { resize: vertical; min-height: 120px; }
+.ts-contact0__submit { width: 100%; }
+.ts-contact0__privacy { font-family: var(--font-body); font-size: var(--font-size-xs); color: var(--color-text-muted); margin-top: var(--spacing-4); text-align: center; }
+.ts-contact0__info-card { background: var(--color-surface); border-radius: var(--radius-card); border: 1px solid var(--color-border); padding: var(--spacing-7); margin-bottom: var(--spacing-6); }
+.ts-contact0__info-title { font-family: var(--font-headers); font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-6); }
+.ts-contact0__info-item { display: flex; gap: var(--spacing-4); align-items: flex-start; margin-bottom: var(--spacing-5); }
+.ts-contact0__info-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 2px; }
+.ts-contact0__info-item strong { display: block; font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: var(--color-text); margin-bottom: 2px; }
+.ts-contact0__info-item p { font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0; }
+.ts-contact0__info-item a { color: var(--color-primary); text-decoration: none; }
+.ts-contact0__social { display: flex; gap: var(--spacing-3); margin-top: var(--spacing-4); padding-top: var(--spacing-5); border-top: 1px solid var(--color-border); }
+.ts-contact0__social-btn { width: 40px; height: 40px; border-radius: var(--radius-circle); background: var(--color-bg); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; text-decoration: none; transition: all var(--transition-fast); }
+.ts-contact0__social-btn:hover { background: var(--color-primary); transform: translateY(-2px); }
+.ts-contact0__map { border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-md); }
+.ts-contact0__map-iframe { width: 100%; height: 200px; border: none; display: block; }
+@media (max-width: 768px) { .ts-contact0__container { grid-template-columns: 1fr; } .ts-form-row { grid-template-columns: 1fr; } }
+</style>

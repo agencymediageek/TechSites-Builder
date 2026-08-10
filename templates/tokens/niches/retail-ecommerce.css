@@ -1,0 +1,30 @@
+/* TechSites Builder — Retail / E-commerce / Store niche tokens */
+:root {
+  --color-primary:       #E63946;
+  --color-primary-dark:  #C1121F;
+  --color-primary-light: #FF4757;
+  --color-secondary:     #C1121F;
+  --color-accent:        #FFB703;
+  --color-accent-dark:   #E5A002;
+  --color-bg:            #FFFFFF;
+  --color-bg-alt:        #F8F8F8;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #1A1A1A;
+  --color-overlay:       rgba(26, 26, 26, 0.65);
+  --color-text:          #1A1A1A;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #6B7280;
+  --color-border:        #E5E7EB;
+  --font-headers:        'Poppins', 'Montserrat', Arial, sans-serif;
+  --font-body:           'Inter', 'Roboto', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       8px;
+  --radius-card:         8px;
+  --radius-btn:          4px;
+  --radius-input:        6px;
+  --shadow-md:           0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg:           0 8px 32px rgba(0, 0, 0, 0.12);
+  --gradient-hero:       linear-gradient(135deg, #E63946 0%, #C1121F 100%);
+  --gradient-cta:        linear-gradient(90deg, #E63946, #FF4757);
+  --spacing-section:     64px;
+}

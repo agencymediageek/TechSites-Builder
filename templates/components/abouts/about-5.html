@@ -1,0 +1,62 @@
+<!-- about-5: Team grid with hover bios | People-first | Coach, Agency, Clinic -->
+<section id="about" class="ts-about5" data-block="about-5" aria-label="Our Team">
+  <div class="ts-about5__container">
+    <div class="ts-about5__header">
+      <span class="ts-section-label" data-editable="about_label">[about_label]</span>
+      <h2 class="ts-section-title" data-editable="about_title">[about_title]</h2>
+      <p class="ts-about5__intro" data-editable="about_intro">[about_intro]</p>
+    </div>
+    <div class="ts-about5__grid">
+      <div class="ts-about5__member">
+        <div class="ts-about5__member-photo-wrap">
+          <img src="[team_1_photo]" alt="[team_1_name]" class="ts-about5__photo" data-editable="team_1_photo" data-editable-type="image" />
+          <div class="ts-about5__overlay"><p data-editable="team_1_bio">[team_1_bio]</p></div>
+        </div>
+        <strong class="ts-about5__name" data-editable="team_1_name">[team_1_name]</strong>
+        <span class="ts-about5__role" data-editable="team_1_role">[team_1_role]</span>
+      </div>
+      <div class="ts-about5__member">
+        <div class="ts-about5__member-photo-wrap">
+          <img src="[team_2_photo]" alt="[team_2_name]" class="ts-about5__photo" data-editable="team_2_photo" data-editable-type="image" />
+          <div class="ts-about5__overlay"><p data-editable="team_2_bio">[team_2_bio]</p></div>
+        </div>
+        <strong class="ts-about5__name" data-editable="team_2_name">[team_2_name]</strong>
+        <span class="ts-about5__role" data-editable="team_2_role">[team_2_role]</span>
+      </div>
+      <div class="ts-about5__member">
+        <div class="ts-about5__member-photo-wrap">
+          <img src="[team_3_photo]" alt="[team_3_name]" class="ts-about5__photo" data-editable="team_3_photo" data-editable-type="image" />
+          <div class="ts-about5__overlay"><p data-editable="team_3_bio">[team_3_bio]</p></div>
+        </div>
+        <strong class="ts-about5__name" data-editable="team_3_name">[team_3_name]</strong>
+        <span class="ts-about5__role" data-editable="team_3_role">[team_3_role]</span>
+      </div>
+      <div class="ts-about5__member">
+        <div class="ts-about5__member-photo-wrap">
+          <img src="[team_4_photo]" alt="[team_4_name]" class="ts-about5__photo" data-editable="team_4_photo" data-editable-type="image" />
+          <div class="ts-about5__overlay"><p data-editable="team_4_bio">[team_4_bio]</p></div>
+        </div>
+        <strong class="ts-about5__name" data-editable="team_4_name">[team_4_name]</strong>
+        <span class="ts-about5__role" data-editable="team_4_role">[team_4_role]</span>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-about5 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-about5__container { max-width: var(--container-max); margin: 0 auto; }
+.ts-about5__header { text-align: center; max-width: var(--container-narrow); margin: 0 auto var(--spacing-12); }
+.ts-about5__intro { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
+.ts-about5__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-6); }
+.ts-about5__member { text-align: center; }
+.ts-about5__member-photo-wrap { position: relative; overflow: hidden; border-radius: var(--radius-card); margin-bottom: var(--spacing-4); }
+.ts-about5__photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; transition: transform var(--transition-slow); }
+.ts-about5__member-photo-wrap:hover .ts-about5__photo { transform: scale(1.06); }
+.ts-about5__overlay { position: absolute; inset: 0; background: var(--color-primary); opacity: 0; display: flex; align-items: flex-end; padding: var(--spacing-5); transition: opacity var(--transition-normal); }
+.ts-about5__member-photo-wrap:hover .ts-about5__overlay { opacity: 0.95; }
+.ts-about5__overlay p { font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-text-inverse); line-height: var(--line-height-normal); margin: 0; }
+.ts-about5__name { display: block; font-family: var(--font-headers); font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-text); margin-bottom: var(--spacing-1); }
+.ts-about5__role { font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-primary); font-weight: var(--font-weight-medium); }
+@media (max-width: 1024px) { .ts-about5__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .ts-about5__grid { grid-template-columns: 1fr 1fr; gap: var(--spacing-4); } }
+</style>

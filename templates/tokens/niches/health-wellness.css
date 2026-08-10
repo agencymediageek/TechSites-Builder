@@ -1,0 +1,30 @@
+/* TechSites Builder — Health / Clinic / Wellness niche tokens */
+:root {
+  --color-primary:       #2ECC71;
+  --color-primary-dark:  #27AE60;
+  --color-primary-light: #52D98B;
+  --color-secondary:     #1ABC9C;
+  --color-accent:        #16A085;
+  --color-accent-dark:   #0E7060;
+  --color-bg:            #F0FFF4;
+  --color-bg-alt:        #E8F8F0;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #1A3A2E;
+  --color-overlay:       rgba(46, 204, 113, 0.20);
+  --color-text:          #1A2E1A;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #4B7F52;
+  --color-border:        #D1FAE5;
+  --font-headers:        'Montserrat', 'Nunito', Arial, sans-serif;
+  --font-body:           'Open Sans', 'Source Sans Pro', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       12px;
+  --radius-card:         16px;
+  --radius-btn:          50px;
+  --radius-input:        8px;
+  --shadow-md:           0 4px 20px rgba(46, 204, 113, 0.15);
+  --shadow-lg:           0 8px 36px rgba(46, 204, 113, 0.20);
+  --gradient-hero:       linear-gradient(135deg, #2ECC71 0%, #1ABC9C 100%);
+  --gradient-cta:        linear-gradient(90deg, #27AE60, #2ECC71);
+  --spacing-section:     88px;
+}

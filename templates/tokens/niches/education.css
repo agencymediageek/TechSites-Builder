@@ -1,0 +1,30 @@
+/* TechSites Builder — Education / Courses / Training niche tokens */
+:root {
+  --color-primary:       #2980B9;
+  --color-primary-dark:  #1F6595;
+  --color-primary-light: #3498DB;
+  --color-secondary:     #3498DB;
+  --color-accent:        #F1C40F;
+  --color-accent-dark:   #D4AC0D;
+  --color-bg:            #F0F8FF;
+  --color-bg-alt:        #E8F4FD;
+  --color-surface:       #FFFFFF;
+  --color-surface-dark:  #1A2C3A;
+  --color-overlay:       rgba(41, 128, 185, 0.20);
+  --color-text:          #1A2C3A;
+  --color-text-inverse:  #FFFFFF;
+  --color-text-muted:    #5D7A8A;
+  --color-border:        #BDE0F8;
+  --font-headers:        'Nunito', 'Poppins', Arial, sans-serif;
+  --font-body:           'Source Sans Pro', 'Open Sans', Arial, sans-serif;
+  --font-weight-bold:    700;
+  --radius-global:       8px;
+  --radius-card:         12px;
+  --radius-btn:          50px;
+  --radius-input:        8px;
+  --shadow-md:           0 4px 16px rgba(41, 128, 185, 0.12);
+  --shadow-lg:           0 8px 32px rgba(41, 128, 185, 0.18);
+  --gradient-hero:       linear-gradient(135deg, #2980B9 0%, #3498DB 100%);
+  --gradient-cta:        linear-gradient(90deg, #F1C40F, #F39C12);
+  --spacing-section:     80px;
+}

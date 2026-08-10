@@ -1,0 +1,60 @@
+<!-- about-1: Vertical timeline | Milestones | Law, Finance, Corporate -->
+<section id="about" class="ts-about1" data-block="about-1" aria-label="Our Story">
+  <div class="ts-about1__container">
+    <div class="ts-about1__header">
+      <span class="ts-section-label" data-editable="about_label">[about_label]</span>
+      <h2 class="ts-section-title" data-editable="about_title">[about_title]</h2>
+      <p class="ts-about1__intro" data-editable="about_intro">[about_intro]</p>
+    </div>
+    <div class="ts-about1__timeline">
+      <div class="ts-about1__item">
+        <div class="ts-about1__dot"></div>
+        <div class="ts-about1__card">
+          <span class="ts-about1__year" data-editable="milestone_1_year">[milestone_1_year]</span>
+          <h3 class="ts-about1__milestone-title" data-editable="milestone_1_title">[milestone_1_title]</h3>
+          <p class="ts-about1__milestone-text" data-editable="milestone_1_text">[milestone_1_text]</p>
+        </div>
+      </div>
+      <div class="ts-about1__item">
+        <div class="ts-about1__dot"></div>
+        <div class="ts-about1__card">
+          <span class="ts-about1__year" data-editable="milestone_2_year">[milestone_2_year]</span>
+          <h3 class="ts-about1__milestone-title" data-editable="milestone_2_title">[milestone_2_title]</h3>
+          <p class="ts-about1__milestone-text" data-editable="milestone_2_text">[milestone_2_text]</p>
+        </div>
+      </div>
+      <div class="ts-about1__item">
+        <div class="ts-about1__dot"></div>
+        <div class="ts-about1__card">
+          <span class="ts-about1__year" data-editable="milestone_3_year">[milestone_3_year]</span>
+          <h3 class="ts-about1__milestone-title" data-editable="milestone_3_title">[milestone_3_title]</h3>
+          <p class="ts-about1__milestone-text" data-editable="milestone_3_text">[milestone_3_text]</p>
+        </div>
+      </div>
+      <div class="ts-about1__item">
+        <div class="ts-about1__dot ts-about1__dot--active"></div>
+        <div class="ts-about1__card ts-about1__card--active">
+          <span class="ts-about1__year" data-editable="milestone_4_year">[milestone_4_year]</span>
+          <h3 class="ts-about1__milestone-title" data-editable="milestone_4_title">[milestone_4_title]</h3>
+          <p class="ts-about1__milestone-text" data-editable="milestone_4_text">[milestone_4_text]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-about1 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-about1__container { max-width: var(--container-narrow); margin: 0 auto; }
+.ts-about1__header { text-align: center; margin-bottom: var(--spacing-16); }
+.ts-about1__intro { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); max-width: 600px; margin: 0 auto; }
+.ts-about1__timeline { position: relative; padding-left: 48px; }
+.ts-about1__timeline::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: var(--color-border); }
+.ts-about1__item { position: relative; margin-bottom: var(--spacing-10); }
+.ts-about1__dot { position: absolute; left: -40px; top: var(--spacing-1); width: 16px; height: 16px; border-radius: 50%; background: var(--color-border); border: 3px solid var(--color-bg); transition: all var(--transition-normal); }
+.ts-about1__dot--active { background: var(--color-primary); border-color: var(--color-primary); box-shadow: 0 0 0 4px rgba(var(--color-primary), 0.20); }
+.ts-about1__card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--spacing-6); box-shadow: var(--shadow-sm); }
+.ts-about1__card--active { border-color: var(--color-primary); box-shadow: var(--shadow-md); }
+.ts-about1__year { font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: var(--color-primary); letter-spacing: var(--letter-spacing-wide); margin-bottom: var(--spacing-2); display: block; }
+.ts-about1__milestone-title { font-family: var(--font-headers); font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0 0 var(--spacing-3); }
+.ts-about1__milestone-text { font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text-muted); line-height: var(--line-height-relaxed); margin: 0; }
+</style>

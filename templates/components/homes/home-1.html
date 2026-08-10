@@ -1,0 +1,108 @@
+<!-- home-1: Split screen L/R | Left text, right image/mockup | One CTA + stats -->
+<!-- NICHE: Professional, Tech, Health | STYLE: Modern, editorial split -->
+<section id="home" class="ts-home1" data-block="home-1" aria-label="Hero">
+  <div class="ts-home1__container">
+    <div class="ts-home1__content">
+      <div class="ts-home1__eyebrow" data-editable="hero_badge">[hero_badge]</div>
+      <h1 class="ts-home1__title" data-editable="hero_title">[hero_title]</h1>
+      <p class="ts-home1__subtitle" data-editable="hero_subtitle">[hero_subtitle]</p>
+      <div class="ts-home1__ctas">
+        <a href="#contact" class="ts-btn ts-btn--primary ts-btn--lg" data-editable="hero_cta_primary">[hero_cta_primary]</a>
+        <a href="#about" class="ts-btn ts-btn--outline" data-editable="hero_cta_secondary">[hero_cta_secondary]</a>
+      </div>
+      <div class="ts-home1__stats">
+        <div class="ts-home1__stat">
+          <strong data-editable="stat_1_num">[stat_1_num]</strong>
+          <span data-editable="stat_1_label">[stat_1_label]</span>
+        </div>
+        <div class="ts-home1__stat-div"></div>
+        <div class="ts-home1__stat">
+          <strong data-editable="stat_2_num">[stat_2_num]</strong>
+          <span data-editable="stat_2_label">[stat_2_label]</span>
+        </div>
+        <div class="ts-home1__stat-div"></div>
+        <div class="ts-home1__stat">
+          <strong data-editable="stat_3_num">[stat_3_num]</strong>
+          <span data-editable="stat_3_label">[stat_3_label]</span>
+        </div>
+      </div>
+    </div>
+    <div class="ts-home1__visual">
+      <div class="ts-home1__img-wrap">
+        <img src="[hero_image_url]" alt="[hero_image_alt]" class="ts-home1__img"
+          data-editable="hero_image_url" data-editable-type="image" data-editable-label="Hero Image"
+          loading="eager" />
+        <div class="ts-home1__img-card ts-home1__img-card--tl">
+          <span>⭐⭐⭐⭐⭐</span>
+          <p data-editable="hero_card_1">[hero_card_1]</p>
+        </div>
+        <div class="ts-home1__img-card ts-home1__img-card--br">
+          <strong data-editable="hero_card_2_num">[hero_card_2_num]</strong>
+          <span data-editable="hero_card_2_label">[hero_card_2_label]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.ts-home1 {
+  background: var(--color-bg);
+  min-height: 100vh; display: flex; align-items: center;
+  padding: calc(var(--spacing-section) + 80px) var(--spacing-6) var(--spacing-section);
+}
+.ts-home1__container {
+  max-width: var(--container-max); margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-16); align-items: center;
+}
+.ts-home1__eyebrow {
+  display: inline-block; margin-bottom: var(--spacing-5);
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold); color: var(--color-primary);
+  letter-spacing: var(--letter-spacing-wider); text-transform: uppercase;
+}
+.ts-home1__title {
+  font-family: var(--font-headers); font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: var(--font-weight-black); color: var(--color-text);
+  line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-tight);
+  margin: 0 0 var(--spacing-6);
+}
+.ts-home1__subtitle {
+  font-family: var(--font-body); font-size: var(--font-size-lg);
+  color: var(--color-text-muted); line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--spacing-8);
+}
+.ts-home1__ctas { display: flex; gap: var(--spacing-4); flex-wrap: wrap; margin-bottom: var(--spacing-10); }
+.ts-home1__stats {
+  display: flex; gap: var(--spacing-6); align-items: center;
+  padding-top: var(--spacing-8); border-top: 1px solid var(--color-border);
+}
+.ts-home1__stat { display: flex; flex-direction: column; gap: var(--spacing-1); }
+.ts-home1__stat strong {
+  font-family: var(--font-headers); font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black); color: var(--color-primary); line-height: 1;
+}
+.ts-home1__stat span { font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-text-muted); }
+.ts-home1__stat-div { width: 1px; height: 40px; background: var(--color-border); }
+.ts-home1__visual { position: relative; }
+.ts-home1__img-wrap { position: relative; border-radius: var(--radius-card); overflow: visible; }
+.ts-home1__img {
+  width: 100%; height: 520px; object-fit: cover;
+  border-radius: var(--radius-card); box-shadow: var(--shadow-xl);
+}
+.ts-home1__img-card {
+  position: absolute; background: var(--color-surface);
+  border-radius: var(--radius-card); padding: var(--spacing-4) var(--spacing-5);
+  box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: var(--spacing-1);
+}
+.ts-home1__img-card--tl { top: -20px; left: -20px; max-width: 200px; }
+.ts-home1__img-card--br { bottom: -20px; right: -20px; text-align: center; }
+.ts-home1__img-card strong { font-family: var(--font-headers); font-size: var(--font-size-2xl); font-weight: var(--font-weight-black); color: var(--color-primary); }
+.ts-home1__img-card span, .ts-home1__img-card p { font-family: var(--font-body); font-size: var(--font-size-xs); color: var(--color-text-muted); margin: 0; }
+@media (max-width: 768px) {
+  .ts-home1__container { grid-template-columns: 1fr; gap: var(--spacing-10); }
+  .ts-home1__visual { order: -1; }
+  .ts-home1__img { height: 280px; }
+  .ts-home1__img-card--tl { display: none; }
+}
+</style>

@@ -1,0 +1,151 @@
+<!-- home-4: Left text + animated illustration right | Light bg | CTA + email capture -->
+<!-- NICHE: SaaS, Education, Services | STYLE: Product/app launch -->
+<section id="home" class="ts-home4" data-block="home-4" aria-label="Hero">
+  <div class="ts-home4__container">
+    <div class="ts-home4__content">
+      <div class="ts-home4__social-proof">
+        <div class="ts-home4__avatars" aria-hidden="true">
+          <span class="ts-home4__avatar ts-home4__avatar--1">😊</span>
+          <span class="ts-home4__avatar ts-home4__avatar--2">🙂</span>
+          <span class="ts-home4__avatar ts-home4__avatar--3">😄</span>
+        </div>
+        <span class="ts-home4__social-text" data-editable="social_proof_text">[social_proof_text]</span>
+      </div>
+      <h1 class="ts-home4__title" data-editable="hero_title">[hero_title]</h1>
+      <p class="ts-home4__subtitle" data-editable="hero_subtitle">[hero_subtitle]</p>
+      <form class="ts-home4__form" onsubmit="return false;">
+        <div class="ts-home4__form-row">
+          <input type="email" class="ts-home4__email" placeholder="[email_placeholder]" aria-label="Your email" />
+          <button class="ts-btn ts-btn--primary ts-btn--lg" type="submit" data-editable="hero_cta_primary">[hero_cta_primary]</button>
+        </div>
+        <p class="ts-home4__form-note" data-editable="hero_form_note">[hero_form_note]</p>
+      </form>
+      <div class="ts-home4__features">
+        <span class="ts-home4__feature">✓ <span data-editable="feature_1">[feature_1]</span></span>
+        <span class="ts-home4__feature">✓ <span data-editable="feature_2">[feature_2]</span></span>
+        <span class="ts-home4__feature">✓ <span data-editable="feature_3">[feature_3]</span></span>
+      </div>
+    </div>
+    <div class="ts-home4__visual">
+      <div class="ts-home4__app-mockup">
+        <img src="[hero_image_url]" alt="[hero_image_alt]" class="ts-home4__mockup-img"
+          data-editable="hero_image_url" data-editable-type="image" data-editable-label="App/Product Image" />
+        <!-- Floating badges -->
+        <div class="ts-home4__badge-1">
+          <span>🚀</span>
+          <div>
+            <strong data-editable="badge_1_title">[badge_1_title]</strong>
+            <span data-editable="badge_1_text">[badge_1_text]</span>
+          </div>
+        </div>
+        <div class="ts-home4__badge-2">
+          <span class="ts-home4__badge-icon">📈</span>
+          <strong data-editable="badge_2_num">[badge_2_num]</strong>
+          <span data-editable="badge_2_label">[badge_2_label]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background decoration -->
+  <div class="ts-home4__decoration" aria-hidden="true">
+    <div class="ts-home4__circle ts-home4__circle--1"></div>
+    <div class="ts-home4__circle ts-home4__circle--2"></div>
+  </div>
+</section>
+
+<style>
+.ts-home4 {
+  position: relative; background: var(--color-bg);
+  min-height: 100vh; display: flex; align-items: center; overflow: hidden;
+  padding: calc(var(--spacing-section) + 80px) var(--spacing-6) var(--spacing-section);
+}
+.ts-home4__container {
+  max-width: var(--container-max); margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-16); align-items: center;
+  position: relative; z-index: 1;
+}
+.ts-home4__social-proof {
+  display: flex; align-items: center; gap: var(--spacing-4); margin-bottom: var(--spacing-6);
+}
+.ts-home4__avatars { display: flex; }
+.ts-home4__avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--color-primary); border: 2px solid var(--color-bg);
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+.ts-home4__avatar--2, .ts-home4__avatar--3 { margin-left: -8px; }
+.ts-home4__social-text {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  color: var(--color-text-muted); font-weight: var(--font-weight-medium);
+}
+.ts-home4__title {
+  font-family: var(--font-headers); font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: var(--font-weight-black); color: var(--color-text);
+  line-height: var(--line-height-tight); margin: 0 0 var(--spacing-6);
+}
+.ts-home4__title span { color: var(--color-primary); }
+.ts-home4__subtitle {
+  font-family: var(--font-body); font-size: var(--font-size-lg);
+  color: var(--color-text-muted); line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--spacing-8);
+}
+.ts-home4__form-row {
+  display: flex; border-radius: var(--radius-btn);
+  overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: var(--spacing-3);
+}
+.ts-home4__email {
+  flex: 1; padding: var(--spacing-4) var(--spacing-5);
+  border: 2px solid var(--color-border); border-right: none;
+  border-radius: var(--radius-btn) 0 0 var(--radius-btn);
+  font-family: var(--font-body); font-size: var(--font-size-base);
+  background: var(--color-surface); color: var(--color-text); outline: none;
+}
+.ts-home4__email:focus { border-color: var(--color-primary); }
+.ts-home4__form-row .ts-btn { border-radius: 0 var(--radius-btn) var(--radius-btn) 0; flex-shrink: 0; }
+.ts-home4__form-note {
+  font-family: var(--font-body); font-size: var(--font-size-xs);
+  color: var(--color-text-muted); margin: 0 0 var(--spacing-8);
+}
+.ts-home4__features {
+  display: flex; gap: var(--spacing-6); flex-wrap: wrap;
+}
+.ts-home4__feature {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  color: var(--color-text-muted); font-weight: var(--font-weight-medium);
+}
+.ts-home4__visual { position: relative; }
+.ts-home4__app-mockup { position: relative; }
+.ts-home4__mockup-img {
+  width: 100%; border-radius: var(--radius-card); box-shadow: var(--shadow-xl);
+}
+.ts-home4__badge-1, .ts-home4__badge-2 {
+  position: absolute; background: var(--color-surface);
+  border-radius: var(--radius-card); box-shadow: var(--shadow-lg); padding: var(--spacing-4);
+}
+.ts-home4__badge-1 {
+  top: -16px; right: -16px;
+  display: flex; align-items: center; gap: var(--spacing-3); max-width: 200px;
+}
+.ts-home4__badge-1 span { font-size: 24px; }
+.ts-home4__badge-1 div { display: flex; flex-direction: column; gap: 2px; }
+.ts-home4__badge-1 strong { font-family: var(--font-body); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: var(--color-text); }
+.ts-home4__badge-1 span:not(:first-child) { font-size: var(--font-size-xs); color: var(--color-text-muted); }
+.ts-home4__badge-2 {
+  bottom: -16px; left: -16px; text-align: center;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.ts-home4__badge-icon { font-size: 20px; }
+.ts-home4__badge-2 strong { font-family: var(--font-headers); font-size: var(--font-size-2xl); font-weight: var(--font-weight-black); color: var(--color-primary); }
+.ts-home4__badge-2 span { font-family: var(--font-body); font-size: var(--font-size-xs); color: var(--color-text-muted); }
+.ts-home4__decoration { position: absolute; inset: 0; pointer-events: none; }
+.ts-home4__circle {
+  position: absolute; border-radius: 50%;
+  background: var(--color-primary); opacity: 0.05;
+}
+.ts-home4__circle--1 { width: 600px; height: 600px; right: -200px; top: -200px; }
+.ts-home4__circle--2 { width: 400px; height: 400px; left: -150px; bottom: -150px; }
+@media (max-width: 768px) {
+  .ts-home4__container { grid-template-columns: 1fr; }
+  .ts-home4__visual { display: none; }
+}
+</style>

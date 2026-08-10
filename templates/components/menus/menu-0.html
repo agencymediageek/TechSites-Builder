@@ -1,0 +1,148 @@
+<!-- menu-0: Transparent → Solid on Scroll | Mobile: Hamburger slide-out | CTA button right -->
+<!-- NICHE: All | STYLE: Modern minimal, works on any background -->
+<nav class="ts-nav ts-nav--transparent" id="main-nav" data-block="menu-0" role="navigation" aria-label="Main navigation">
+  <div class="ts-nav__container">
+    <!-- Logo -->
+    <a href="/" class="ts-nav__logo" aria-label="[business_name] home">
+      <img src="[logo_url]" alt="[business_name]" class="ts-nav__logo-img" data-editable="logo_url" data-editable-type="image" data-editable-label="Logo" width="140" height="40" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+      <span class="ts-nav__logo-text" style="display:none" data-editable="business_name" data-editable-label="Business Name">[business_name]</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="ts-nav__links" role="list">
+      <li><a href="#home" class="ts-nav__link" data-editable="nav_link_1" data-editable-label="Nav Link 1">[nav_link_1]</a></li>
+      <li><a href="#about" class="ts-nav__link" data-editable="nav_link_2" data-editable-label="Nav Link 2">[nav_link_2]</a></li>
+      <li><a href="#services" class="ts-nav__link" data-editable="nav_link_3" data-editable-label="Nav Link 3">[nav_link_3]</a></li>
+      <li><a href="#contact" class="ts-nav__link" data-editable="nav_link_4" data-editable-label="Nav Link 4">[nav_link_4]</a></li>
+    </ul>
+
+    <!-- CTA -->
+    <a href="#contact" class="ts-btn ts-btn--primary ts-nav__cta" data-editable="nav_cta" data-editable-label="Nav CTA Button">[nav_cta]</a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="ts-nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="ts-nav__mobile" id="mobile-menu" aria-hidden="true">
+    <ul class="ts-nav__mobile-links" role="list">
+      <li><a href="#home" class="ts-nav__mobile-link">[nav_link_1]</a></li>
+      <li><a href="#about" class="ts-nav__mobile-link">[nav_link_2]</a></li>
+      <li><a href="#services" class="ts-nav__mobile-link">[nav_link_3]</a></li>
+      <li><a href="#contact" class="ts-nav__mobile-link">[nav_link_4]</a></li>
+      <li><a href="#contact" class="ts-btn ts-btn--primary ts-nav__mobile-cta">[nav_cta]</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+.ts-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: var(--z-sticky);
+  padding: 0 var(--spacing-6);
+  transition: background var(--transition-normal) var(--transition-ease),
+              box-shadow var(--transition-normal) var(--transition-ease);
+}
+.ts-nav--transparent { background: transparent; }
+.ts-nav--solid {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+.ts-nav__container {
+  max-width: var(--container-max); margin: 0 auto;
+  display: flex; align-items: center; gap: var(--spacing-8);
+  height: 72px;
+}
+.ts-nav__logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.ts-nav__logo-img { height: 36px; width: auto; object-fit: contain; }
+.ts-nav__logo-text {
+  font-family: var(--font-headers); font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold); color: var(--color-text);
+}
+.ts-nav__links {
+  display: flex; gap: var(--spacing-8); list-style: none;
+  margin: 0; padding: 0; margin-left: auto;
+}
+.ts-nav__link {
+  font-family: var(--font-body); font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); color: var(--color-text-inverse);
+  text-decoration: none; letter-spacing: var(--letter-spacing-wide);
+  transition: color var(--transition-fast);
+}
+.ts-nav--solid .ts-nav__link { color: var(--color-text); }
+.ts-nav__link:hover { color: var(--color-accent); }
+.ts-nav__cta { margin-left: var(--spacing-6); flex-shrink: 0; font-size: var(--font-size-sm); }
+.ts-nav__burger {
+  display: none; background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; padding: var(--spacing-2);
+  margin-left: auto;
+}
+.ts-nav__burger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--color-text-inverse); border-radius: 2px;
+  transition: transform var(--transition-normal), opacity var(--transition-fast);
+}
+.ts-nav--solid .ts-nav__burger span { background: var(--color-text); }
+.ts-nav__mobile {
+  display: none; background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+.ts-nav__mobile-links { list-style: none; margin: 0; padding: var(--spacing-4) 0; }
+.ts-nav__mobile-link {
+  display: block; padding: var(--spacing-4) var(--spacing-6);
+  font-family: var(--font-body); font-size: var(--font-size-base);
+  color: var(--color-text); text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.ts-nav__mobile-link:hover { background: var(--color-bg-alt); color: var(--color-primary); }
+.ts-nav__mobile-cta {
+  display: inline-block; margin: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-sm);
+}
+@media (max-width: 768px) {
+  .ts-nav__links, .ts-nav__cta { display: none; }
+  .ts-nav__burger { display: flex; }
+  .ts-nav__mobile.open { display: block; }
+}
+</style>
+
+<script>
+(function() {
+  const nav = document.getElementById('main-nav');
+  const burger = nav.querySelector('.ts-nav__burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Scroll behavior: transparent → solid
+  function onScroll() {
+    if (window.scrollY > 60) {
+      nav.classList.add('ts-nav--solid');
+      nav.classList.remove('ts-nav--transparent');
+    } else {
+      nav.classList.remove('ts-nav--solid');
+      nav.classList.add('ts-nav--transparent');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Hamburger toggle
+  burger.addEventListener('click', function() {
+    const open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    mobileMenu.setAttribute('aria-hidden', !open);
+  });
+
+  // Smooth scroll for anchor links
+  nav.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        mobileMenu.classList.remove('open');
+      }
+    });
+  });
+})();
+</script>

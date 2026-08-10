@@ -1,0 +1,95 @@
+<!-- about-4: Before/After comparison slider | Health, Fitness, Beauty -->
+<section id="about" class="ts-about4" data-block="about-4" aria-label="Results">
+  <div class="ts-about4__container">
+    <div class="ts-about4__header">
+      <span class="ts-section-label" data-editable="about_label">[about_label]</span>
+      <h2 class="ts-section-title" data-editable="about_title">[about_title]</h2>
+      <p class="ts-about4__intro" data-editable="about_intro">[about_intro]</p>
+    </div>
+    <div class="ts-about4__comparison">
+      <div class="ts-about4__slider-wrap">
+        <img src="[before_image_url]" alt="Before" class="ts-about4__before"
+          data-editable="before_image_url" data-editable-type="image" data-editable-label="Before Image" />
+        <div class="ts-about4__after-wrap">
+          <img src="[after_image_url]" alt="After" class="ts-about4__after"
+            data-editable="after_image_url" data-editable-type="image" data-editable-label="After Image" />
+        </div>
+        <div class="ts-about4__divider" id="ts-ba-divider">
+          <div class="ts-about4__handle">⟺</div>
+        </div>
+        <span class="ts-about4__label ts-about4__label--before" data-editable="before_label">[before_label]</span>
+        <span class="ts-about4__label ts-about4__label--after" data-editable="after_label">[after_label]</span>
+      </div>
+      <div class="ts-about4__results">
+        <div class="ts-about4__result">
+          <strong data-editable="result_1_num">[result_1_num]</strong>
+          <span data-editable="result_1_label">[result_1_label]</span>
+        </div>
+        <div class="ts-about4__result">
+          <strong data-editable="result_2_num">[result_2_num]</strong>
+          <span data-editable="result_2_label">[result_2_label]</span>
+        </div>
+        <div class="ts-about4__result">
+          <strong data-editable="result_3_num">[result_3_num]</strong>
+          <span data-editable="result_3_label">[result_3_label]</span>
+        </div>
+      </div>
+    </div>
+    <div class="ts-about4__testimonials">
+      <div class="ts-about4__testimonial">
+        <p class="ts-about4__testimonial-text" data-editable="testimonial_1_text">"[testimonial_1_text]"</p>
+        <strong data-editable="testimonial_1_name">[testimonial_1_name]</strong>
+      </div>
+      <div class="ts-about4__testimonial">
+        <p class="ts-about4__testimonial-text" data-editable="testimonial_2_text">"[testimonial_2_text]"</p>
+        <strong data-editable="testimonial_2_name">[testimonial_2_name]</strong>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.ts-about4 { background: var(--color-bg); padding: var(--spacing-section) var(--spacing-6); }
+.ts-about4__container { max-width: var(--container-max); margin: 0 auto; }
+.ts-about4__header { text-align: center; max-width: var(--container-narrow); margin: 0 auto var(--spacing-12); }
+.ts-about4__intro { font-family: var(--font-body); font-size: var(--font-size-lg); color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
+.ts-about4__comparison { display: grid; grid-template-columns: 3fr 1fr; gap: var(--spacing-8); margin-bottom: var(--spacing-12); align-items: center; }
+.ts-about4__slider-wrap { position: relative; overflow: hidden; border-radius: var(--radius-card); cursor: col-resize; user-select: none; }
+.ts-about4__before, .ts-about4__after { width: 100%; height: 400px; object-fit: cover; display: block; }
+.ts-about4__after-wrap { position: absolute; inset: 0; width: 50%; overflow: hidden; transition: width 0.1s; }
+.ts-about4__after { width: 200%; }
+.ts-about4__divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: var(--color-text-inverse); transform: translateX(-50%); cursor: col-resize; }
+.ts-about4__handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--color-text-inverse); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; box-shadow: var(--shadow-md); }
+.ts-about4__label { position: absolute; top: var(--spacing-4); font-family: var(--font-body); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius-pill); background: rgba(0,0,0,0.60); color: white; }
+.ts-about4__label--before { left: var(--spacing-4); }
+.ts-about4__label--after { right: var(--spacing-4); }
+.ts-about4__results { display: flex; flex-direction: column; gap: var(--spacing-6); }
+.ts-about4__result { background: var(--color-surface); border-radius: var(--radius-card); padding: var(--spacing-5); text-align: center; border: 1px solid var(--color-border); }
+.ts-about4__result strong { display: block; font-family: var(--font-headers); font-size: var(--font-size-3xl); font-weight: var(--font-weight-black); color: var(--color-primary); }
+.ts-about4__result span { font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-text-muted); }
+.ts-about4__testimonials { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-6); }
+.ts-about4__testimonial { background: var(--color-surface); border-radius: var(--radius-card); padding: var(--spacing-6); border: 1px solid var(--color-border); }
+.ts-about4__testimonial-text { font-family: var(--font-body); font-size: var(--font-size-base); color: var(--color-text-muted); font-style: italic; line-height: var(--line-height-relaxed); margin: 0 0 var(--spacing-4); }
+.ts-about4__testimonial strong { font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--color-primary); font-weight: var(--font-weight-bold); }
+@media (max-width: 768px) { .ts-about4__comparison { grid-template-columns: 1fr; } .ts-about4__results { flex-direction: row; flex-wrap: wrap; } .ts-about4__testimonials { grid-template-columns: 1fr; } }
+</style>
+<script>
+(function() {
+  const wrap = document.querySelector('.ts-about4__slider-wrap');
+  const afterWrap = document.querySelector('.ts-about4__after-wrap');
+  const divider = document.getElementById('ts-ba-divider');
+  if (!wrap || !afterWrap || !divider) return;
+  let dragging = false;
+  function setPos(x) {
+    const rect = wrap.getBoundingClientRect();
+    const pct = Math.max(5, Math.min(95, ((x - rect.left) / rect.width) * 100));
+    afterWrap.style.width = pct + '%';
+    divider.style.left = pct + '%';
+  }
+  divider.addEventListener('mousedown', () => { dragging = true; });
+  window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+  window.addEventListener('mouseup', () => { dragging = false; });
+  divider.addEventListener('touchstart', e => { dragging = true; e.preventDefault(); }, { passive: false });
+  window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend', () => { dragging = false; });
+})();
+</script>

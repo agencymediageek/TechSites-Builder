@@ -1,0 +1,87 @@
+<!-- footer-0: 4-column + logo | General purpose | All niches -->
+<footer id="footer" class="ts-footer0" data-block="footer-0" aria-label="Footer">
+  <div class="ts-footer0__main">
+    <div class="ts-footer0__container">
+      <div class="ts-footer0__brand">
+        <a href="#home" class="ts-footer0__logo-link" aria-label="[site_name] Home">
+          <img src="[logo_url]" alt="[site_name]" class="ts-footer0__logo" data-editable="logo_url" data-editable-type="image" />
+        </a>
+        <p class="ts-footer0__tagline" data-editable="footer_tagline">[footer_tagline]</p>
+        <div class="ts-footer0__social">
+          <a href="[social_instagram]" aria-label="Instagram" class="ts-footer0__social-link" data-editable="social_instagram" data-editable-type="link">📷</a>
+          <a href="[social_facebook]" aria-label="Facebook" class="ts-footer0__social-link" data-editable="social_facebook" data-editable-type="link">📘</a>
+          <a href="[social_youtube]" aria-label="YouTube" class="ts-footer0__social-link" data-editable="social_youtube" data-editable-type="link">📺</a>
+          <a href="[social_whatsapp]" aria-label="WhatsApp" class="ts-footer0__social-link" data-editable="social_whatsapp" data-editable-type="link">💬</a>
+        </div>
+      </div>
+      <nav class="ts-footer0__nav-col" aria-label="Company links">
+        <h4 class="ts-footer0__nav-title" data-editable="footer_nav_1_title">[footer_nav_1_title]</h4>
+        <ul class="ts-footer0__nav-list">
+          <li><a href="[footer_link_1_url]" data-editable="footer_link_1_label">[footer_link_1_label]</a></li>
+          <li><a href="[footer_link_2_url]" data-editable="footer_link_2_label">[footer_link_2_label]</a></li>
+          <li><a href="[footer_link_3_url]" data-editable="footer_link_3_label">[footer_link_3_label]</a></li>
+          <li><a href="[footer_link_4_url]" data-editable="footer_link_4_label">[footer_link_4_label]</a></li>
+        </ul>
+      </nav>
+      <nav class="ts-footer0__nav-col" aria-label="Services links">
+        <h4 class="ts-footer0__nav-title" data-editable="footer_nav_2_title">[footer_nav_2_title]</h4>
+        <ul class="ts-footer0__nav-list">
+          <li><a href="[footer_link_5_url]" data-editable="footer_link_5_label">[footer_link_5_label]</a></li>
+          <li><a href="[footer_link_6_url]" data-editable="footer_link_6_label">[footer_link_6_label]</a></li>
+          <li><a href="[footer_link_7_url]" data-editable="footer_link_7_label">[footer_link_7_label]</a></li>
+          <li><a href="[footer_link_8_url]" data-editable="footer_link_8_label">[footer_link_8_label]</a></li>
+        </ul>
+      </nav>
+      <div class="ts-footer0__contact-col">
+        <h4 class="ts-footer0__nav-title" data-editable="footer_contact_title">[footer_contact_title]</h4>
+        <ul class="ts-footer0__contact-list">
+          <li><span>📍</span><span data-editable="footer_address">[footer_address]</span></li>
+          <li><span>📞</span><a href="tel:[footer_phone]" data-editable="footer_phone">[footer_phone]</a></li>
+          <li><span>📧</span><a href="mailto:[footer_email]" data-editable="footer_email">[footer_email]</a></li>
+          <li><span>⏰</span><span data-editable="footer_hours">[footer_hours]</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ts-footer0__bottom">
+    <div class="ts-footer0__bottom-container">
+      <p class="ts-footer0__copy" data-editable="footer_copy">© <span class="ts-year"></span> [site_name]. [footer_copy]</p>
+      <div class="ts-footer0__legal">
+        <a href="[privacy_url]" data-editable="footer_privacy_link">[footer_privacy_link]</a>
+        <a href="[terms_url]" data-editable="footer_terms_link">[footer_terms_link]</a>
+        <a href="[cookies_url]" data-editable="footer_cookies_link">[footer_cookies_link]</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+.ts-footer0 { background: var(--color-surface-dark, #0f172a); color: var(--color-text-on-dark, rgba(255,255,255,0.75)); }
+.ts-footer0__main { padding: var(--spacing-section) var(--spacing-6); }
+.ts-footer0__container { max-width: var(--container-max); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: var(--spacing-12); }
+.ts-footer0__logo { height: 44px; width: auto; object-fit: contain; filter: brightness(0) invert(1); margin-bottom: var(--spacing-5); display: block; }
+.ts-footer0__tagline { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.60); line-height: var(--line-height-relaxed); margin: 0 0 var(--spacing-6); max-width: 280px; }
+.ts-footer0__social { display: flex; gap: var(--spacing-3); }
+.ts-footer0__social-link { width: 36px; height: 36px; border-radius: var(--radius-circle); background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; text-decoration: none; transition: background var(--transition-fast); border: 1px solid rgba(255,255,255,0.12); }
+.ts-footer0__social-link:hover { background: var(--color-primary); border-color: var(--color-primary); }
+.ts-footer0__nav-title { font-family: var(--font-headers); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: rgba(255,255,255,0.90); letter-spacing: var(--letter-spacing-wide); text-transform: uppercase; margin: 0 0 var(--spacing-5); }
+.ts-footer0__nav-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--spacing-3); }
+.ts-footer0__nav-list a { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.60); text-decoration: none; transition: color var(--transition-fast); }
+.ts-footer0__nav-list a:hover { color: var(--color-accent, #f59e0b); }
+.ts-footer0__contact-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--spacing-4); }
+.ts-footer0__contact-list li { display: flex; gap: var(--spacing-3); align-items: flex-start; font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.60); }
+.ts-footer0__contact-list a { color: rgba(255,255,255,0.60); text-decoration: none; transition: color var(--transition-fast); }
+.ts-footer0__contact-list a:hover { color: var(--color-accent, #f59e0b); }
+.ts-footer0__bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: var(--spacing-5) var(--spacing-6); }
+.ts-footer0__bottom-container { max-width: var(--container-max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-4); }
+.ts-footer0__copy { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.40); margin: 0; }
+.ts-footer0__legal { display: flex; gap: var(--spacing-6); }
+.ts-footer0__legal a { font-family: var(--font-body); font-size: var(--font-size-sm); color: rgba(255,255,255,0.40); text-decoration: none; transition: color var(--transition-fast); }
+.ts-footer0__legal a:hover { color: rgba(255,255,255,0.80); }
+@media (max-width: 1024px) { .ts-footer0__container { grid-template-columns: 1fr 1fr; gap: var(--spacing-8); } }
+@media (max-width: 640px) { .ts-footer0__container { grid-template-columns: 1fr; } .ts-footer0__bottom-container { flex-direction: column; align-items: flex-start; } .ts-footer0__legal { flex-wrap: wrap; gap: var(--spacing-3); } }
+</style>
+
+<script>
+document.querySelectorAll('.ts-year').forEach(el => { el.textContent = new Date().getFullYear(); });
+</script>

@@ -90,7 +90,9 @@ Esses itens permanecem no roadmap pós-demo e não devem ser apresentados como c
 
 ### Sábado, 29 de agosto — locadora e Studio
 
-- [ ] Definir nome, identidade visual mínima e conteúdo da locadora.
+- [x] Fazer o próprio Builder sugerir nome, monograma/logo e paleta por ramo.
+- [x] Adicionar o ramo “Automotivo & Locadora” ao onboarding.
+- [x] Remover publicação automática: novos sites permanecem em rascunho até revisão.
 - [ ] Criar tenant/site descartável.
 - [ ] Garantir criação, abertura e edição no Studio sem etapas simuladas.
 - [ ] Revisar o tratamento de falha da geração por IA no fluxo de criação.
@@ -155,6 +157,8 @@ Esses itens permanecem no roadmap pós-demo e não devem ser apresentados como c
 - Membership por site e proteção de nós bloqueados: implementados e validados em desenvolvimento.
 - Studio visual, bundle completo, automação E2E, observabilidade e recuperação externa: ainda incompletos.
 
-## 10. Próxima decisão necessária
+## 10. Decisão de identidade da demonstração
 
-Definir o nome e a identidade visual mínima da locadora. Na ausência de uma marca aprovada, usar uma identidade temporária claramente marcada como demonstração e sem vínculo com cliente real.
+Nome, monograma/logo e paleta da locadora não serão definidos fora do produto. O próprio Builder deverá sugerir o nome, aplicar uma paleta por ramo de atividade, aceitar upload de logo e persistir a identidade no primeiro `BuilderDocument`.
+
+O próximo passo operacional é criar um tenant descartável e executar o fluxo autenticado completo sem promover o site para produção.

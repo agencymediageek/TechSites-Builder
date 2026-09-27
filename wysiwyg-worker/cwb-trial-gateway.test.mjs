@@ -16,6 +16,7 @@ const audience = 'test-audience';
 const allowedOrigin = 'https://trial.cwb.site';
 const adminOrigin = 'https://wysiwyg.techsites.ai';
 const pageKey = 'dHJpYWwuY3diLnNpdGU:page:index.html';
+const expiresAt = '2026-10-04T01:03:49Z';
 const fieldIds = [
   'hero-title',
   'hero-lead',
@@ -44,11 +45,24 @@ const publicJwk = {
   use: 'sig',
 };
 const previousFetch = globalThis.fetch;
-globalThis.fetch = async (url) => {
-  assert.equal(String(url), `${issuer}/cdn-cgi/access/certs`, 'only mocked JWKS requests are allowed');
-  return new Response(JSON.stringify({ keys: [publicJwk] }), {
-    headers: { 'Content-Type': 'application/json' },
-  });
+const officialPages = new Map([
+  ['https://madalosso.com.br/madalosso-nossa-historia/', '<p>Em 1963, começou a história da Família Madalosso. Polenta frita, lasanha na manteiga e gnocchi de batata-salsa.</p>'],
+  ['https://madalosso.com.br/nossas-lojas/familia-madalosso/', '<p>Endereço: Av. Manoel Ribas, Curitiba. Horário de funcionamento: terça-feira.</p>'],
+  ['https://madalosso.com.br/cardapios2/cardapio-familia-madalosso/', '<h1>Cardápio da matriz</h1>'],
+]);
+globalThis.fetch = async url => {
+  const requestUrl = String(url);
+  if (requestUrl === `${issuer}/cdn-cgi/access/certs`) {
+    return new Response(JSON.stringify({ keys: [publicJwk] }), {
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+  if (officialPages.has(requestUrl)) {
+    return new Response(officialPages.get(requestUrl), {
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
+    });
+  }
+  assert.fail(`Unexpected network request: ${requestUrl}`);
 };
 after(() => {
   globalThis.fetch = previousFetch;
@@ -107,9 +121,14 @@ async function call(path, { method = 'GET', headers = {}, body } = {}, env) {
   }), env);
 }
 
+function withoutServerNow(state) {
+  const { serverNow, ...stableState } = state;
+  return stableState;
+}
+
 test('trial gateway public state, authenticated editing, and write protections', async () => {
   const backing = new Map();
-  const env = envFor(backing);
+  const env = envFor(backing, { TRIAL_EXPIRES_AT: expiresAt });
 
   const initialResponse = await call('/cwb-trial/state', {
     headers: { Origin: allowedOrigin },
@@ -121,6 +140,8 @@ test('trial gateway public state, authenticated editing, and write protections',
   assert.deepEqual(initialState.fields, [], 'public state stays sparse before an explicit save');
   assert.equal(initialState.updatedAt, null);
   assert.match(initialState.revision, /^initial-[a-f0-9]{64}$/);
+  assert.ok(Number.isFinite(Date.parse(initialState.serverNow)));
+  assert.equal(Date.parse(initialState.expiresAt), Date.parse(expiresAt));
 
   const preflight = await call('/cwb-trial/state', {
     method: 'OPTIONS',
@@ -132,9 +153,37 @@ test('trial gateway public state, authenticated editing, and write protections',
 
   const deniedResponse = await call('/cwb-trial/admin/state', {}, env);
   assert.equal(deniedResponse.status, 401);
+  assert.equal((await call('/cwb-trial/admin', {}, env)).status, 401);
+  assert.equal((await call('/cwb-trial/admin/source-review', {}, env)).status, 401);
 
   const accessToken = await makeAccessToken();
   const adminHeaders = { 'CF-Access-Jwt-Assertion': accessToken };
+  const adminPageResponse = await call('/cwb-trial/admin', { headers: adminHeaders }, env);
+  assert.equal(adminPageResponse.status, 200);
+  const adminPage = await adminPageResponse.text();
+  assert.match(adminPage, /Recarregar edições salvas/);
+  assert.match(adminPage, /Atualizar com fontes oficiais/);
+  assert.match(adminPage, /Testar na prévia/);
+  assert.match(adminPage, /cwb-trial:preview/);
+
+  const reviewResponse = await call('/cwb-trial/admin/source-review', {
+    headers: adminHeaders,
+  }, env);
+  assert.equal(reviewResponse.status, 200);
+  const review = await reviewResponse.json();
+  assert.ok(Number.isFinite(Date.parse(review.checkedAt)));
+  assert.deepEqual(review.sources.map(source => source.topic), [
+    'historia', 'polenta', 'lasanha', 'gnocchi', 'cardapio', 'horarios', 'endereco',
+  ]);
+  assert.ok(review.sources.every(source => source.status === 'OK'));
+  assert.equal(review.sources.find(source => source.topic === 'polenta').url, 'https://madalosso.com.br/madalosso-nossa-historia/');
+  assert.match(review.sources.find(source => source.topic === 'polenta').excerpt, /Polenta frita/);
+  assert.match(review.sources.find(source => source.topic === 'lasanha').excerpt, /lasanha na manteiga/);
+  assert.match(review.sources.find(source => source.topic === 'gnocchi').excerpt, /gnocchi de batata-salsa/);
+  assert.match(review.sources.find(source => source.topic === 'horarios').excerpt, /Horário de funcionamento/);
+  assert.match(review.sources.find(source => source.topic === 'endereco').excerpt, /Manoel Ribas/);
+  assert.equal(backing.has(pageKey), false, 'source review does not write KV');
+
   const adminResponse = await call('/cwb-trial/admin/state', {
     headers: adminHeaders,
   }, env);
@@ -184,7 +233,7 @@ test('trial gateway public state, authenticated editing, and write protections',
   }, reloadedEnv);
   assert.equal(staleResponse.status, 409);
   const stateAfterStale = await (await call('/cwb-trial/state', {}, reloadedEnv)).json();
-  assert.deepEqual(stateAfterStale, persistedState, 'stale revision does not discard saved state');
+  assert.deepEqual(withoutServerNow(stateAfterStale), withoutServerNow(persistedState), 'stale revision does not discard saved state');
 
   const htmlFields = saveFields.map((field, index) => (
     index === 0 ? { ...field, value: '<b>markup</b>' } : field
@@ -201,8 +250,8 @@ test('trial gateway public state, authenticated editing, and write protections',
   assert.equal(htmlResponse.status, 400);
   assert.match((await htmlResponse.json()).error, /HTML and markup/);
   assert.deepEqual(
-    await (await call('/cwb-trial/state', {}, reloadedEnv)).json(),
-    persistedState,
+    withoutServerNow(await (await call('/cwb-trial/state', {}, reloadedEnv)).json()),
+    withoutServerNow(persistedState),
     'rejected markup does not alter persisted state',
   );
 
@@ -218,8 +267,8 @@ test('trial gateway public state, authenticated editing, and write protections',
   }, expiredEnv);
   assert.equal(expiredResponse.status, 410);
   assert.deepEqual(
-    await (await call('/cwb-trial/state', {}, reloadedEnv)).json(),
-    persistedState,
+    withoutServerNow(await (await call('/cwb-trial/state', {}, reloadedEnv)).json()),
+    withoutServerNow(persistedState),
     'expired trial blocks writes without changing state',
   );
 });

@@ -8,6 +8,25 @@
 const SITE_ID = 'dHJpYWwuY3diLnNpdGU';
 const PAGE_KEY = `${SITE_ID}:page:index.html`;
 const PREVIEW_URL = 'https://trial.cwb.site';
+const OFFICIAL_SOURCES = [
+  {
+    key: 'history',
+    title: 'História oficial da Família Madalosso',
+    url: 'https://madalosso.com.br/madalosso-nossa-historia/',
+  },
+  {
+    key: 'unit',
+    title: 'Unidade matriz — página oficial',
+    url: 'https://madalosso.com.br/nossas-lojas/familia-madalosso/',
+  },
+  {
+    key: 'menu',
+    title: 'Cardápio oficial da matriz',
+    url: 'https://madalosso.com.br/cardapios2/cardapio-familia-madalosso/',
+  },
+];
+const SOURCE_REVIEW_MAX_BYTES = 512 * 1024;
+const SOURCE_REVIEW_TIMEOUT_MS = 8000;
 const MAX_BODY_BYTES = 16 * 1024;
 const MAX_VALUE_CHARS = 500;
 const FIELD_IDS = [
@@ -103,6 +122,128 @@ async function readState(env) {
     ? stored.revision
     : await revisionFor(fields, updatedAt);
   return { fields, updatedAt, revision };
+}
+
+function decodeHtmlEntities(value) {
+  return value
+    .replace(/&nbsp;|&#160;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&#(\d+);/g, (_, code) => {
+      const point = Number(code);
+      return point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff) ? String.fromCodePoint(point) : '�';
+    })
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => {
+      const point = parseInt(code, 16);
+      return point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff) ? String.fromCodePoint(point) : '�';
+    });
+}
+
+function htmlToPlainText(html) {
+  return decodeHtmlEntities(html
+    .replace(/<(script|style|noscript|svg)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<[^>]*>/g, ' '))
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function snippetNear(text, terms) {
+  const lower = text.toLocaleLowerCase('pt-BR');
+  let position = -1;
+  for (const term of terms) {
+    position = lower.indexOf(term.toLocaleLowerCase('pt-BR'));
+    if (position >= 0) break;
+  }
+  if (position < 0) return '';
+  const start = Math.max(0, position - 130);
+  const end = Math.min(text.length, position + 250);
+  return `${start > 0 ? '…' : ''}${text.slice(start, end).trim()}${end < text.length ? '…' : ''}`;
+}
+
+async function fetchOfficialSource(source) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), SOURCE_REVIEW_TIMEOUT_MS);
+  try {
+    const response = await fetch(source.url, {
+      method: 'GET',
+      redirect: 'manual',
+      headers: { Accept: 'text/html,application/xhtml+xml' },
+      signal: controller.signal,
+    });
+    if (!response.ok) {
+      return { text: '', status: `HTTP ${response.status}` };
+    }
+    if (!/^text\/html\b/i.test(response.headers.get('Content-Type') || '')) {
+      return { text: '', status: 'Falha: fonte não retornou uma página HTML' };
+    }
+    const reader = response.body?.getReader();
+    if (!reader) return { text: '', status: 'Falha: resposta sem conteúdo' };
+    const chunks = [];
+    let totalBytes = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      totalBytes += value.byteLength;
+      if (totalBytes > SOURCE_REVIEW_MAX_BYTES) {
+        await reader.cancel();
+        return { text: '', status: 'Falha: fonte excede o limite de leitura' };
+      }
+      chunks.push(value);
+    }
+    const bytes = new Uint8Array(totalBytes);
+    let offset = 0;
+    for (const chunk of chunks) {
+      bytes.set(chunk, offset);
+      offset += chunk.byteLength;
+    }
+    return { text: htmlToPlainText(new TextDecoder().decode(bytes)), status: 'OK' };
+  } catch (error) {
+    return {
+      text: '',
+      status: error?.name === 'AbortError' ? 'Falha: tempo limite excedido' : 'Falha: fonte inacessível',
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function handleSourceReview() {
+  const fetched = await Promise.all(OFFICIAL_SOURCES.map(async source => [
+    source.key,
+    await fetchOfficialSource(source),
+  ]));
+  const byKey = new Map(fetched);
+  const topics = [
+    { topic: 'historia', source: 'history', terms: ['1963', 'história', 'tres mesas', 'três mesas'] },
+    { topic: 'polenta', source: 'menu', fallback: 'history', terms: ['polenta'] },
+    { topic: 'lasanha', source: 'menu', fallback: 'history', terms: ['lasanha'] },
+    { topic: 'gnocchi', source: 'menu', fallback: 'history', terms: ['gnocchi', 'nhoque'] },
+    { topic: 'cardapio', source: 'menu', terms: ['cardápio', 'cardapio'] },
+    { topic: 'horarios', source: 'unit', terms: ['horário', 'horarios', 'funcionamento', 'terça', 'terca'] },
+    { topic: 'endereco', source: 'unit', terms: ['endereço', 'endereco', 'manoel ribas', 'curitiba'] },
+  ];
+  const sources = topics.map(({ topic, source: preferredKey, fallback, terms }) => {
+    const preferred = byKey.get(preferredKey);
+    const preferredExcerpt = preferred?.text ? snippetNear(preferred.text, terms) : '';
+    const fallbackResult = fallback ? byKey.get(fallback) : null;
+    const fallbackExcerpt = fallbackResult?.text ? snippetNear(fallbackResult.text, terms) : '';
+    const sourceKey = preferredExcerpt || !fallbackExcerpt ? preferredKey : fallback;
+    const source = OFFICIAL_SOURCES.find(item => item.key === sourceKey);
+    const result = byKey.get(sourceKey);
+    const excerpt = sourceKey === preferredKey ? preferredExcerpt : fallbackExcerpt;
+    return {
+      topic,
+      title: source.title,
+      url: source.url,
+      excerpt,
+      status: result.status === 'OK' && !excerpt ? 'OK: trecho não encontrado' : result.status,
+    };
+  });
+  return json({ checkedAt: new Date().toISOString(), sources });
 }
 
 function base64UrlDecode(value) {
@@ -204,7 +345,7 @@ async function handleAdminPage(env) {
       <div class="actions">
         <label for="mode" style="margin:0">Modo de edição</label>
         <select id="mode"><option value="normal">Simples</option><option value="advanced">Avançado</option></select>
-        <button class="secondary" id="refetch" type="button">Atualizar do servidor</button>
+         <button class="secondary" id="refetch" type="button">Recarregar edições salvas</button>
       </div>
       <p class="muted">Suas mudanças só entram no ar quando você clicar em salvar. Depois, a página busca os dados atualizados no servidor.</p>
       <p id="countdown" class="muted"${expiry ? '' : ' hidden'}></p>
@@ -219,6 +360,19 @@ async function handleAdminPage(env) {
         <div class="advanced-only" hidden><label for="dish-03-description">Descrição do prato 3</label><textarea id="dish-03-description" maxlength="500"></textarea></div>
         <div class="actions"><button id="save" type="submit">Salvar mudanças</button><span id="revision" class="muted"></span></div>
       </form>
+      <section aria-label="Revisão editorial com fontes oficiais">
+        <h2>Revisão editorial (somente consulta)</h2>
+        <p class="muted">Trechos são referências para revisão, não confirmação de mudanças. Confira a fonte e faça a revisão editorial antes de usar qualquer texto.</p>
+        <div class="actions"><button class="secondary" id="source-review" type="button">Atualizar com fontes oficiais</button></div>
+        <div id="source-results" class="muted" aria-live="polite"></div>
+        <h3>Descrições propostas — não salvas</h3>
+        <p class="muted">Estas áreas não alteram o formulário nem são salvas no servidor.</p>
+        <label for="review-dish-01-description">Proposta: polenta</label><textarea id="review-dish-01-description" maxlength="500"></textarea>
+        <label for="review-dish-02-description">Proposta: lasanha</label><textarea id="review-dish-02-description" maxlength="500"></textarea>
+        <label for="review-dish-03-description">Proposta: gnocchi</label><textarea id="review-dish-03-description" maxlength="500"></textarea>
+        <div class="actions"><button class="secondary" id="test-preview" type="button">Testar na prévia</button></div>
+        <p class="muted">Teste somente visual: o conteúdo é enviado à prévia nesta aba, não é salvo e será descartado ao navegar ou atualizar.</p>
+      </section>
       <div id="status" class="status" role="status" aria-live="polite"></div>
     </section>
     <section class="panel" aria-label="Prévia ao vivo"><iframe id="site-preview" class="preview" src="${PREVIEW_URL}" title="Prévia do site"></iframe></section>
@@ -240,6 +394,9 @@ async function handleAdminPage(env) {
           if (!response.ok) throw new Error('Não foi possível atualizar os dados (' + response.status + ').');
           const state = await response.json();
           ids.forEach(id => { document.getElementById(id).value = state.fields.find(field => field.id === id)?.value ?? ''; });
+           ['dish-01-description', 'dish-02-description', 'dish-03-description'].forEach(id => {
+             document.getElementById('review-' + id).value = state.fields.find(field => field.id === id)?.value ?? '';
+           });
           revision = state.revision;
           document.getElementById('revision').textContent = 'Versão: ' + revision;
           setStatus('Pronto! Esses são os dados atuais.');
@@ -247,6 +404,46 @@ async function handleAdminPage(env) {
       }
       document.getElementById('mode').addEventListener('change', showFields);
       document.getElementById('refetch').addEventListener('click', refetch);
+      document.getElementById('source-review').addEventListener('click', async () => {
+        const results = document.getElementById('source-results');
+        results.textContent = 'Consultando fontes oficiais…';
+        try {
+          const response = await fetch('/cwb-trial/admin/source-review', { cache: 'no-store' });
+          const result = await response.json();
+          if (!response.ok) throw new Error(result.error || 'Falha ao consultar fontes oficiais.');
+          results.replaceChildren();
+          result.sources.forEach(source => {
+            const item = document.createElement('article');
+            const heading = document.createElement('h4');
+            heading.textContent = source.topic + ' — ' + source.title;
+            const excerpt = document.createElement('p');
+            excerpt.textContent = source.excerpt || 'Nenhum trecho correspondente foi localizado.';
+            const status = document.createElement('p');
+            status.textContent = 'Estado da consulta: ' + source.status;
+            const link = document.createElement('a');
+            link.href = source.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = 'Revisar na fonte oficial';
+            item.append(heading, excerpt, status, link);
+            results.append(item);
+          });
+        } catch (error) {
+          results.textContent = error.message || 'Não foi possível consultar as fontes oficiais.';
+        }
+      });
+      document.getElementById('test-preview').addEventListener('click', () => {
+        const frame = document.getElementById('site-preview');
+        frame.contentWindow.postMessage({
+          type: 'cwb-trial:preview',
+          fields: {
+            'dish-01-description': document.getElementById('review-dish-01-description').value,
+            'dish-02-description': document.getElementById('review-dish-02-description').value,
+            'dish-03-description': document.getElementById('review-dish-03-description').value,
+          },
+        }, ${JSON.stringify(PREVIEW_URL)});
+        setStatus('Proposta enviada apenas à prévia desta sessão; nada foi salvo.');
+      });
       document.getElementById('editor').addEventListener('submit', async event => {
         event.preventDefault();
         if (!revision) { setStatus('Atualize os dados do servidor antes de salvar.'); return; }
@@ -385,13 +582,19 @@ export default {
       }
       if (request.method !== 'GET') return json({ error: 'Method not allowed' }, 405, true);
       try {
-        return json(await readState(env), 200, true);
+        const state = await readState(env);
+        const expiry = getExpiry(env);
+        return json({
+          ...state,
+          serverNow: new Date().toISOString(),
+          expiresAt: expiry?.iso ?? null,
+        }, 200, true);
       } catch (error) {
         return json({ error: error.message === 'Missing TS_WYSIWYG_KV' ? error.message : 'Unable to read trial state' }, 500, true);
       }
     }
 
-    if (!['/cwb-trial/admin', '/cwb-trial/admin/state', '/cwb-trial/admin/save'].includes(url.pathname)) {
+    if (!['/cwb-trial/admin', '/cwb-trial/admin/state', '/cwb-trial/admin/save', '/cwb-trial/admin/source-review'].includes(url.pathname)) {
       return json({ error: 'Not found' }, 404);
     }
     if (!(await verifyAccessJwt(request, env))) return json({ error: 'Cloudflare Access authentication required' }, 401);
@@ -405,6 +608,9 @@ export default {
         const expiry = getExpiry(env);
         const adminState = { ...state, fields: fieldsWithDefaults(state.fields) };
         return json(expiry ? { ...adminState, expiresAt: expiry.iso } : adminState);
+      }
+      if (url.pathname === '/cwb-trial/admin/source-review' && request.method === 'GET') {
+        return await handleSourceReview();
       }
       if (url.pathname === '/cwb-trial/admin/save' && request.method === 'POST') {
         if (request.headers.get('Origin') !== 'https://wysiwyg.techsites.ai') {

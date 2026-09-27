@@ -12,3 +12,4 @@ id = "0393c417adb04d6abc72429959b4d637"
 [vars]
 ACCESS_AUD = "09bdc2b8fcab812cd004ac86fb76801a4ac397001cf01c09153b67876ec97c1a"
 ACCESS_ISSUER = "https://reynaldodallin.cloudflareaccess.com"
+TRIAL_EXPIRES_AT = "2026-10-04T01:03:49Z"

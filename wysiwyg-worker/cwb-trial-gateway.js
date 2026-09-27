@@ -7,7 +7,6 @@
 
 const SITE_ID = 'dHJpYWwuY3diLnNpdGU';
 const PAGE_KEY = `${SITE_ID}:page:index.html`;
-const ALLOWED_ORIGIN = 'https://trial.cwb.site';
 const PREVIEW_URL = 'https://trial.cwb.site';
 const MAX_BODY_BYTES = 16 * 1024;
 const MAX_VALUE_CHARS = 500;
@@ -45,11 +44,10 @@ function responseHeaders(extra = {}) {
 function json(data, status = 200, cors = false) {
   const headers = responseHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
   if (cors) {
-    headers['Access-Control-Allow-Origin'] = ALLOWED_ORIGIN;
+    headers['Access-Control-Allow-Origin'] = '*';
     headers['Access-Control-Allow-Methods'] = 'GET, OPTIONS';
     headers['Access-Control-Allow-Headers'] = 'Content-Type';
     headers['Access-Control-Max-Age'] = '86400';
-    headers.Vary = 'Origin';
   }
   return new Response(JSON.stringify(data), { status, headers });
 }
@@ -374,18 +372,14 @@ export default {
     if (!url.pathname.startsWith('/cwb-trial/')) return json({ error: 'Not found' }, 404);
 
     if (url.pathname === '/cwb-trial/state') {
-      const origin = request.headers.get('Origin');
-      if (origin && origin !== ALLOWED_ORIGIN) return json({ error: 'Origin not allowed' }, 403);
       if (request.method === 'OPTIONS') {
-        if (origin !== ALLOWED_ORIGIN) return json({ error: 'Origin not allowed' }, 403);
         return new Response(null, {
           status: 204,
           headers: responseHeaders({
-            'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type',
             'Access-Control-Max-Age': '86400',
-            Vary: 'Origin',
           }),
         });
       }

@@ -115,7 +115,7 @@ test('trial gateway public state, authenticated editing, and write protections',
     headers: { Origin: allowedOrigin },
   }, env);
   assert.equal(initialResponse.status, 200);
-  assert.equal(initialResponse.headers.get('Access-Control-Allow-Origin'), allowedOrigin);
+  assert.equal(initialResponse.headers.get('Access-Control-Allow-Origin'), '*');
   assert.equal(initialResponse.headers.get('Cache-Control'), 'no-store');
   const initialState = await initialResponse.json();
   assert.deepEqual(initialState.fields, [], 'public state stays sparse before an explicit save');
@@ -127,7 +127,7 @@ test('trial gateway public state, authenticated editing, and write protections',
     headers: { Origin: allowedOrigin },
   }, env);
   assert.equal(preflight.status, 204);
-  assert.equal(preflight.headers.get('Access-Control-Allow-Origin'), allowedOrigin);
+  assert.equal(preflight.headers.get('Access-Control-Allow-Origin'), '*');
   assert.equal(preflight.headers.get('Access-Control-Allow-Methods'), 'GET, OPTIONS');
 
   const deniedResponse = await call('/cwb-trial/admin/state', {}, env);

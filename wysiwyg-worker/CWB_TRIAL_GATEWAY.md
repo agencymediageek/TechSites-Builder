@@ -27,7 +27,8 @@ the existing universal Worker route.
 
 Do not put an Access token, permanent browser key, or other secret in the page.
 Admin requests rely on the Access-protected request header. The public state
-route is read-only and emits CORS headers only for `https://trial.cwb.site`.
+route is read-only; it emits wildcard CORS so the Replit preview can load
+the same public fields. It never allows cross-origin writes or credentials.
 
 ## Endpoint shapes
 

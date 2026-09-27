@@ -1,0 +1,14 @@
+name = "techsites-cwb-trial-gateway"
+main = "cwb-trial-gateway.js"
+account_id = "26b19ee17142012acbf267bed32581c0"
+compatibility_date = "2026-09-26"
+workers_dev = false
+routes = [{ pattern = "wysiwyg.techsites.ai/cwb-trial/*", zone_name = "techsites.ai" }]
+
+[[kv_namespaces]]
+binding = "TS_WYSIWYG_KV"
+id = "0393c417adb04d6abc72429959b4d637"
+
+[vars]
+ACCESS_AUD = "09bdc2b8fcab812cd004ac86fb76801a4ac397001cf01c09153b67876ec97c1a"
+ACCESS_ISSUER = "https://reynaldodallin.cloudflareaccess.com"
